@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import introduceImg from '../images/introduce.png';
+
+const introduceImg = `${process.env.PUBLIC_URL}/images/introduce.png`
 
 function Home() {
   return (

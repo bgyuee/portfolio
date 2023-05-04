@@ -8,10 +8,20 @@ import styled from 'styled-components';
 import Header from './components/Header';
 import { useState } from 'react';
 import Background from './components/Background';
+import projects from './data/projects';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+
+
 
 function App() {
 
   const [isLoading, setIsLoadting] = useState(true);
+  const projectLength = projects.length;
 
   return (
     <div className="App">
@@ -23,8 +33,10 @@ function App() {
           <Header />
           <Home />
           <Profile />
-          <Projects>
-            <Project />
+          <Projects style={{width : `${projectLength*100}%`}}>
+            {projects.map((item, index) => (
+              <Project key={index} project={item} projectLength={projectLength}/>
+            ))}
           </Projects>
           <Footer />
       </>
@@ -34,6 +46,7 @@ function App() {
 }
 
 const Projects = styled.div`
+  display: flex;
 `
 
 export default App;

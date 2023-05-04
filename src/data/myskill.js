@@ -1,12 +1,13 @@
-import html from '../images/icon_html.png';
-import css from '../images/icon_css.png';
-import sass from '../images/icon_sass.png';
-import javascript from '../images/icon_javascript.png';
-import react from '../images/icon_react.png';
-import redux from '../images/icon_redux.png';
-import typescript from '../images/icon_typescript.png';
-import firebase from '../images/icon_firebase.png';
-import github from '../images/icon_github.png';
+const html = `${process.env.PUBLIC_URL}/images/icon_html.png`;
+const css = `${process.env.PUBLIC_URL}/images/icon_css.png`;
+const sass = `${process.env.PUBLIC_URL}/images/icon_sass.png`;
+const javascript = `${process.env.PUBLIC_URL}/images/icon_javascript.png`;
+const react = `${process.env.PUBLIC_URL}/images/icon_react.png`;
+const redux = `${process.env.PUBLIC_URL}/images/icon_redux.png`;
+const typescript = `${process.env.PUBLIC_URL}/images/icon_typescript.png`;
+const firebase = `${process.env.PUBLIC_URL}/images/icon_firebase.png`;
+const github = `${process.env.PUBLIC_URL}/images/icon_github.png`;
+
 
 const myskil = [
   {

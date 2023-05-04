@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import profileImg from '../images/profileImg.png';
 import Character from '../components/Character';
 import myskill from '../data/myskill';
+
+const profileImg = `${process.env.PUBLIC_URL}/images/profileImg.png`
 
 function Profile() {
   return (
