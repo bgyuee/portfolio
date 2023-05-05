@@ -33,11 +33,20 @@ function App() {
           <Header />
           <Home />
           <Profile />
-          <Projects style={{width : `${projectLength*100}%`}}>
+          <Swiper
+            modules={[Navigation, Pagination, Scrollbar, A11y]}
+            navigation
+            pagination={{clickable : true}}
+            loop={true} //무한롤링
+          >
+            <Projects style={{width : `${projectLength*100}%`}}>
             {projects.map((item, index) => (
-              <Project key={index} project={item} projectLength={projectLength}/>
+              <SwiperSlide>
+                <Project key={index} project={item} />
+              </SwiperSlide>
             ))}
-          </Projects>
+             </Projects>
+          </Swiper>
           <Footer />
       </>
       )}

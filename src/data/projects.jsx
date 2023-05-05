@@ -26,7 +26,7 @@ const projects = [
        Css <span>animation</span> 속성과 마우스 <span>Hover</span> 인터렉션 구현
      </p>,
       <p>
-      Javascript <span>settimeout함수</span>를 이용해서 무한 슬라이드 구현
+      Javascript <span>settimeout함수</span>를 이용해서 무한 롤링슬라이드 구현
     </p>
     ],
     videos : samsungcntVideo
@@ -108,7 +108,7 @@ const projects = [
     ],
     explanation : [
       <>
-        <p>삼성물산 홈페이지를 <span>figma</span>를 이용해서 Layout을 정하고, 퍼블리싱</p>
+        <p>CJONE 홈페이지를 <span>figma</span>를 이용해서 Layout을 정하고, 퍼블리싱</p>
         <p>반응형 웹으로 Pc, Tablet, Mobile 환경에서 사용가능</p>
         <p><span>CSS animation</span> 속성과 마우스 <span>Hover</span> 인터렉션 구현</p>
         <p><span>Javascript의 배열</span>을 이용해서 gif파일을 이용해서 애니메이션 구현</p>

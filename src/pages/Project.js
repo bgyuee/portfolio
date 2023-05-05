@@ -5,10 +5,10 @@ const mockupMobile = `${process.env.PUBLIC_URL}/images/mockypPHONE.png`;
 const mockupPc = `${process.env.PUBLIC_URL}/images/mockuPC.png`;
 const github = `${process.env.PUBLIC_URL}/images/project_github.png`;
 
-function Project({project, projectLength}) {
+function Project({project}) {
 
   return (
-    <ProjectContainer className='background_common' style={{width : `${100/projectLength}%`}}>
+    <ProjectContainer className='background_common'>
       <h2 className='project_subject'>Projects</h2>
       <div className='project_content'>
         <div className= {`project_info ${project.class}`}>
@@ -51,6 +51,7 @@ function Project({project, projectLength}) {
 const ProjectContainer = styled.div`
   margin: 0 auto;
   border: 1px solid red;
+  width: 100%;
 
   .project_subject{
     margin-top: 90px;
@@ -176,8 +177,12 @@ const ProjectContainer = styled.div`
             width: 400px;
             font-size: 16px;
           }
-          &.cjone{}
-          &.samsungsem{}
+          &.cjone{
+            width: 450px;
+          }
+          &.samsungsem{
+            width: 450px;
+          }
           >p{
             display: flex;
             justify-content: center;
