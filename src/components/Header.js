@@ -1,16 +1,60 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { Link } from 'react-scroll';
 import styled from 'styled-components';
 
-function Header() {
+function Header({homeRef, profileRef, projectsRef, contactRef}) {
+
+  const [activeSection, setActiveSection] = useState('home');
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if(entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    },
+    {
+      root:null,
+      rootMargin:'0px',
+      threshold:0.5,
+    }
+    );
+    observer.observe(homeRef.current);
+    observer.observe(profileRef.current);
+    observer.observe(projectsRef.current);
+    observer.observe(contactRef.current);
+
+    return () => {
+      observer.disconnect();
+    }
+  }, [homeRef, profileRef, projectsRef, contactRef]);
+
   return (
     <HeaderContainer>
       <div className='Nav'>
         <h1 className='logo'>GYUYEOP</h1>
         <ul className='nav_meun'>
-          <li className='nav_Home'>Home</li>
-          <li className='nav_Profile'>Profile</li>
-          <li className='nav_Projects'>Projects</li>
-          <li className='Contact'>Contact</li>
+        <li className={activeSection === "home" ? "active" : ""}>
+          <Link to="home" spy={true} smooth={true} duration={500}>
+            Home
+          </Link>
+        </li>
+        <li className={activeSection === "profile" ? "active" : ""}>
+          <Link to="profile" spy={true} smooth={true} duration={500}>
+            Profile
+          </Link>
+        </li>
+        <li className={activeSection === "projects" ? "active" : ""}>
+          <Link to="projects" spy={true} smooth={true} duration={500}>
+            Projects
+          </Link>
+        </li>
+        <li className={activeSection === "contact" ? "active" : ""}>
+          <Link to="contact" spy={true} smooth={true} duration={500}>
+            Contact
+          </Link>
+        </li>
         </ul>
       </div>
     </HeaderContainer>

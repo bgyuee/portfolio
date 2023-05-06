@@ -6,7 +6,7 @@ import Project from './pages/Project';
 import Footer from './pages/Footer';
 import styled from 'styled-components';
 import Header from './components/Header';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import Background from './components/Background';
 import projects from './data/projects';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -16,12 +16,15 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
-
-
 function App() {
 
   const [isLoading, setIsLoadting] = useState(true);
   const projectLength = projects.length;
+
+  const homeRef = useRef(null);
+  const profileRef = useRef(null);
+  const projectsRef = useRef(null);
+  const contactRef = useRef(null);
 
   return (
     <div className="App">
@@ -30,10 +33,15 @@ function App() {
       ) : (
         <>
           <Background />
-          <Header />
-          <Home />
-          <Profile />
-          <Swiper
+          <Header 
+            homeRef={homeRef}
+            profileRef={profileRef}
+            projectsRef={profileRef}
+            contactRef={contactRef}
+          />
+          <Home homeRef={homeRef} />
+          <Profile profileRef={profileRef} />
+          <Swiper ref={projectsRef} id="projects"
             modules={[Navigation, Pagination, Scrollbar, A11y]}
             navigation
             pagination={{clickable : true}}
@@ -41,13 +49,13 @@ function App() {
           >
             <Projects style={{width : `${projectLength*100}%`}}>
             {projects.map((item, index) => (
-              <SwiperSlide>
-                <Project key={index} project={item} />
+              <SwiperSlide key={index}>
+                <Project project={item} key={index} />
               </SwiperSlide>
             ))}
              </Projects>
           </Swiper>
-          <Footer />
+          <Footer contactRef={contactRef} />
       </>
       )}
     </div>

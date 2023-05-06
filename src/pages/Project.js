@@ -8,7 +8,7 @@ const github = `${process.env.PUBLIC_URL}/images/project_github.png`;
 function Project({project}) {
 
   return (
-    <ProjectContainer className='background_common'>
+    <ProjectContainer className='background_common' id="projects">
       <h2 className='project_subject'>Projects</h2>
       <div className='project_content'>
         <div className= {`project_info ${project.class}`}>

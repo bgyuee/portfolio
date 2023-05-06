@@ -3,10 +3,10 @@ import styled from 'styled-components';
 
 const introduceImg = `${process.env.PUBLIC_URL}/images/introduce.png`
 
-function Home() {
+function Home({homeRef}) {
   return (
     <>
-    <HomeContainer className='background_common'>
+    <HomeContainer className='background_common' id="home" ref={homeRef}>
       <h2 className='blind'>Home</h2>
       <div className='home_greeting'>
         <span>h</span>
