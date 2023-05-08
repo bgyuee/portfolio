@@ -86,7 +86,23 @@ const HeaderContainer = styled.div`
       width: 450px;
       font-size: 25px;
       >li{
+        position: relative;
         cursor: pointer;
+        &::after{
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #fff;
+            transition: width 0.2s ease-in-out 0s;
+        }
+        &.active{
+          &::after{
+            width: 100%;
+          }
+        }
       }
     }
     

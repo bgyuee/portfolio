@@ -25,8 +25,8 @@ function Project({project}) {
           </div>
           <div className='project_Link'>
             <div className='sites'>
-              <div className='site_link'>사이트 바로가기</div>
-              <div className='site_github' style={{background : `url(${github}) no-repeat 25% 50%, #373743`}}>GitHub</div>
+              <div className='site_link'><a href={`${project.site}`} target='blank'>사이트 바로가기</a></div>
+              <div className='site_github' style={{background : `url(${github}) no-repeat 25% 50%, #373743`}}><a href={`${project.github}`} target='blank'>GitHub</a></div>
             </div>
             <div className='validation'>유효성 검사</div>
           </div>
@@ -127,6 +127,15 @@ const ProjectContainer = styled.div`
             align-items: center;
             border-radius: 12px;
             cursor: pointer;
+            a{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                text-decoration: none;
+                color: #fff;
+              }
             &.site_link{
               background: #353A9E;
             }

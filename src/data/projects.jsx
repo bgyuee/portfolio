@@ -29,6 +29,8 @@ const projects = [
       Javascript <span>settimeout함수</span>를 이용해서 무한 롤링슬라이드 구현
     </p>
     ],
+    site : 'https://bgyuee.github.io/samsungcnt_project/',
+    github: 'https://github.com/bgyuee/samsungcnt_project',
     videos : samsungcntVideo
   },
   {
@@ -63,6 +65,8 @@ const projects = [
       </>
       
     ],
+    site : 'https://bgyuee.github.io/movie_webapp/',
+    github: 'https://github.com/bgyuee/movie_webapp',
     videos : movieVideo
   },
   {
@@ -92,6 +96,8 @@ const projects = [
         </p>
      </>
     ],
+    site : 'https://bgyuee.github.io/Chattingwebapp/',
+    github: 'https://github.com/bgyuee/Chattingwebapp',
     videos : messenger
   },
   {
@@ -114,6 +120,8 @@ const projects = [
         <p><span>Javascript의 배열</span>을 이용해서 gif파일을 이용해서 애니메이션 구현</p>
     </>
     ],
+    site : 'https://bgyuee.github.io/CJONE_project/',
+    github: 'https://github.com/bgyuee/CJONE_project',
     videos : samsungcntVideo
   },
   {
@@ -134,6 +142,8 @@ const projects = [
         <p><span>CSS animation</span> 속성과 마우스 <span>Hover</span> 인터렉션 구현</p>
       </>
     ],
+    site : 'https://bgyuee.github.io/samsungsem/',
+    github: 'https://github.com/bgyuee/samsungsem',
     videos : samsungcntVideo
   }
   

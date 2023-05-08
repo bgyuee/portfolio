@@ -36,7 +36,7 @@ function App() {
           <Header 
             homeRef={homeRef}
             profileRef={profileRef}
-            projectsRef={profileRef}
+            projectsRef={projectsRef}
             contactRef={contactRef}
           />
           <Home homeRef={homeRef} />
