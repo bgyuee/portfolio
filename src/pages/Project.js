@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
+import FacebookEmoji from '../components/FacebookEmoji';
 
 const mockupMobile = `${process.env.PUBLIC_URL}/images/mockypPHONE.png`;
 const mockupPc = `${process.env.PUBLIC_URL}/images/mockuPC.png`;
@@ -9,7 +10,7 @@ function Project({project}) {
 
   return (
     <ProjectContainer className='background_common' id="projects">
-      <h2 className='project_subject'>Projects</h2>
+      <h2 className='blind'>Projects</h2>
       <div className='project_content'>
         <div className= {`project_info ${project.class}`}>
           <div className= {`project_video ${project.class}`} style={{
@@ -44,14 +45,17 @@ function Project({project}) {
             </div>
         </div>
       </div>
+      <FacebookEmoji />
     </ProjectContainer>
   )
 }
 
 const ProjectContainer = styled.div`
   margin: 0 auto;
+  padding-top: 200px;
   border: 1px solid red;
   width: 100%;
+  box-sizing: border-box;
 
   .project_subject{
     margin-top: 90px;
@@ -72,36 +76,40 @@ const ProjectContainer = styled.div`
       display: flex;
       flex-direction: column;
       align-items: center;
-      width: 800px;
-      height: 650px;
+      width: 40vw;
+      min-width: 466px;
+      height: 31vw;
+      min-height: 253px;
       &.messenger{
-        
        }
-
       .project_video{
         position: relative;
+        margin-bottom: 50px;
         width: 100%;
-        min-width: 560px;
-        height: 76%;
+        height: 70%;
         background-size: cover;
+        box-sizing: border-box;
         &.messenger{
           transform: translateY(-30px);
+          width: 40%;
+          height: 90%;
+          margin-bottom: 20px;
        }
       
         .video_box{
           position: absolute;
-          left: 50%;
-          top: 5.5%;
-          transform: translateX(-50%);
-          width: 500.8px;
-          height: 300.34px;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
           background-color: #1098F7;
+          
           &.messenger{
-            top: 7%;
-            width: 210px;
-            height: 430px;
-            border-radius: 12px;
-            overflow: hidden;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            
          }
           >video{
             width: 100%;
@@ -112,13 +120,13 @@ const ProjectContainer = styled.div`
       }
       .project_Link{
         display: flex;
-        width: 72%;
+        width: 100%;
         justify-content: space-between;
         font-weight: 500;
         .sites{
           display: flex;
           justify-content: space-between;
-          width: 350px;
+          width: 360px;
           >div{
             display: flex;
             justify-content: center;

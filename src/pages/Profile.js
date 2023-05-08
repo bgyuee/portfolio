@@ -40,7 +40,7 @@ function Profile({profileRef}) {
           {
             myskill.map((skill, index) => (
                 <li 
-                  className={`skill ${(currnetSkill === index) && 'skillRotate'}`}
+                  className={`skill ${(currnetSkill === index) && `skillRotate ${skill.class}`}`}
                   key={index} 
                   style={{background:`url(${skill.image}) no-repeat 50% 50%`}}
                   onMouseEnter={() => {
@@ -56,7 +56,7 @@ function Profile({profileRef}) {
           }
           </ul>
           <div className='skill_description'>
-                  <h4>{myskill[currnetSkill].title}</h4>
+                  <h4 className={myskill[currnetSkill].class}>{myskill[currnetSkill].title}</h4>
                   <p>{myskill[currnetSkill].description}</p>
            </div>
         </div>
@@ -130,21 +130,38 @@ const ProfileContainer = styled.div`
             background-size: cover;
             border-radius: 12px;
             cursor: pointer;
+            transition: filter 0.3s ease-in-out 0s;
             &.skillRotate{
-              border: 3px solid #EE942B;
-              box-sizing: border-box;
+              &.html{filter: drop-shadow(5px 5px 20px #E44F26);}
+              &.css{filter: drop-shadow(5px 5px 20px #1572B6);}
+              &.sass{filter: drop-shadow(5px 5px 20px #CC6699);}
+              &.javascript{filter: drop-shadow(5px 5px 20px #F0DB4F);}
+              &.react{filter: drop-shadow(5px 5px 20px #61DAFB);}
+              &.redux{filter: drop-shadow(5px 5px 20px #764ABC);}
+              &.typescript{filter: drop-shadow(5px 5px 20px #007ACC);}
+              &.firebase{filter: drop-shadow(5px 5px 20px #EEAB37);}
+              &.github{filter: drop-shadow(5px 5px 20px #FFFFFF);}
             }
           }
         }
         .skill_description{
+          margin-top: 50px;
           >h4{
             margin-bottom: 10px;
-            font-size: 40px;
+            font-size: 50px;
             font-weight: 600;
-            color: #EE942B;
+            &.html{color: #E44F26;}
+            &.css{color: #1572B6;}
+            &.sass{color: #CC6699;}
+            &.javascript{color: #F0DB4F;}
+            &.react{color: #61DAFB;}
+            &.redux{color: #764ABC;}
+            &.typescript{color: #007ACC;}
+            &.firebase{color: #EEAB37;}
+            &.github{color: #FFFFFF;}
           }
           >p{
-            font-size: 20px;
+            font-size: 25px;
           }
         }
       }

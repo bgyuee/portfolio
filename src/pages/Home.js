@@ -34,7 +34,7 @@ const HomeContainer = styled.div`
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 35vw;
+    font-size: 34vw;
     font-weight: 700;
     color: #1098F7;
 
@@ -62,7 +62,7 @@ const HomeContainer = styled.div`
     left: 350px;
     display: flex;
     flex-direction: column;
-    font-size: 4.25vw;
+    font-size: 3.8vw;
     font-weight: 600;
 
     >span{
