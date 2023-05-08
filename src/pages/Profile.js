@@ -23,7 +23,6 @@ function Profile({profileRef}) {
     }
   }, [isHovered])
 
-
   return (
     <ProfileContainer className='background_common' id='profile' ref={profileRef}>
        <h2 className='blind'>Profile</h2>
