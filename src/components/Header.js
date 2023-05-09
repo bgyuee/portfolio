@@ -66,6 +66,7 @@ const HeaderContainer = styled.div`
   position: fixed;
   width: 100%;
   height: 80px;
+  
   .Nav{
     display: flex;
     justify-content: space-between;

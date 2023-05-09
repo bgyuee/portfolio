@@ -80,46 +80,47 @@ const ProjectContainer = styled.div`
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
-    width: 85%;
+    width: 1632px;
 
     .project_info{
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
       align-items: center;
-      width: 40vw;
-      min-width: 466px;
-      height: 31vw;
-      min-height: 253px;
+      width: 768px;
+      height: 550px;
+      
       &.messenger{
+        height: 600px;
        }
       .project_video{
         position: relative;
-        margin-bottom: 50px;
         width: 100%;
-        height: 70%;
+        height: 455px;
         background-size: cover;
         box-sizing: border-box;
         &.messenger{
-          transform: translateY(-30px);
-          width: 40%;
-          height: 90%;
+          width: 288px;
+          height: 538px;
           margin-bottom: 20px;
        }
       
         .video_box{
           position: absolute;
           left: 0;
-          top: 0;
+          top: 35px;
           width: 100%;
-          height: 100%;
+          height: 91.6%;
           background-color: #1098F7;
-          
+          border-radius:  0 0 12px 12px;
+          overflow: hidden;
           &.messenger{
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            
+            top: 56px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 86%;
+            height: 79%;
+            border-radius: 0 0 0 0;
          }
           >video{
             width: 100%;

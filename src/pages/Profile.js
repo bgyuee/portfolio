@@ -69,6 +69,7 @@ function Profile({profileRef}) {
 const ProfileContainer = styled.div`
 /* border: 1px solid red; */
   position: relative;
+  min-width: 1472px;
   overflow: hidden;
   font-family: 'Do Hyeon', sans-serif;
 

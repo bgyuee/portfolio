@@ -5,7 +5,7 @@ function Validation({setValidationModal, validation, title}) {
 
   return (
     <ValidatonContainer>
-      <h3 className='validation_title'>validation</h3>
+      <h3 className='validation_title blind'>validation</h3>
       <div className='validation_close' onClick={()=> setValidationModal(false)}>
         CLOSE
       </div>
