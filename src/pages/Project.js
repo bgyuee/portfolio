@@ -1,12 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components';
-import FacebookEmoji from '../components/FacebookEmoji';
+import Validation from '../components/Validation';
 
 const mockupMobile = `${process.env.PUBLIC_URL}/images/mockypPHONE.png`;
 const mockupPc = `${process.env.PUBLIC_URL}/images/mockuPC.png`;
 const github = `${process.env.PUBLIC_URL}/images/project_github.png`;
 
-function Project({project}) {
+function Project({project, validationModal, setValidationModal}) {
 
   return (
     <ProjectContainer className='background_common' id="projects">
@@ -27,9 +27,14 @@ function Project({project}) {
           <div className='project_Link'>
             <div className='sites'>
               <div className='site_link'><a href={`${project.site}`} target='blank'>사이트 바로가기</a></div>
-              <div className='site_github' style={{background : `url(${github}) no-repeat 25% 50%, #373743`}}><a href={`${project.github}`} target='blank'>GitHub</a></div>
+              <div className='site_github' style={{background : `url(${github}) no-repeat 25% 50%, #373743`}}>
+                <a href={`${project.github}`} target='blank'>GitHub</a>
+              </div>
             </div>
-            <div className='validation'>유효성 검사</div>
+            {project.class !== "movie" && project.class !== "messenger" &&
+            <div className='validation' onClick={() => setValidationModal(prev => (!prev))}>유효성 검사</div>
+            }
+            
           </div>
         </div>
         <div className='project_description'>
@@ -45,15 +50,20 @@ function Project({project}) {
             </div>
         </div>
       </div>
-      <FacebookEmoji />
+      {validationModal && <Validation 
+        setValidationModal={setValidationModal} 
+        validation={project.validation} 
+        title={project.title}
+        />}
     </ProjectContainer>
   )
 }
 
 const ProjectContainer = styled.div`
+  /* border: 1px solid red; */
+  position: relative;
   margin: 0 auto;
   padding-top: 200px;
-  border: 1px solid red;
   width: 100%;
   box-sizing: border-box;
 

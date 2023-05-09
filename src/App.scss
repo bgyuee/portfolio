@@ -12,6 +12,11 @@
 
 
   // Swiper
+  .swiperRemove{
+    .swiper-button-prev, .swiper-button-next, .swiper-pagination-bullets{
+      display: none;  
+    }
+  }
   .swiper-button-prev, .swiper-button-next{
     z-index: 1000;
     top: 117px;
@@ -45,6 +50,47 @@
         background-color: #fff;
         opacity: 1;
       }
+    }
+  }
+}
+
+// 마우스휠
+.mosemove{
+  position: fixed;
+  bottom: 2px;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(-50%);
+  
+  .mouse{
+    width: 50px;
+    height: 50px;
+  }
+  .mouseWheelDown{
+    width: 70px;
+    height: 46px;
+    animation: mouseDown infinite 0.5s 0s linear alternate;
+    @keyframes mouseDown {
+      0%{transform: translateY(0);}
+      100%{transform: translateY(-10px);}
+    }
+  }
+  .mouseWheelUp{
+    width: 150px;
+    height: 150px;
+    animation: mouseUp infinite 0.5s 0s linear alternate;
+    opacity: 0.8;
+    cursor: pointer;
+    &:hover{
+      opacity: 1;
+    }
+
+    @keyframes mouseUp {
+      0%{transform: translateY(0);}
+      100%{transform: translateY(10px);}
     }
   }
 }

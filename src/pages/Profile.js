@@ -67,19 +67,21 @@ function Profile({profileRef}) {
 }
 
 const ProfileContainer = styled.div`
+/* border: 1px solid red; */
   position: relative;
-  border: 1px solid red;
   overflow: hidden;
+  font-family: 'Do Hyeon', sans-serif;
 
   .myIntroduce{
     position: absolute;
     top: 100px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    font-size: 50px;
-    font-family: 'Nanum Pen Script', cursive;
+    left: 10%;
+    font-size: 40px;
     text-shadow: 2px 2px 4px #1098F7;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: 
+    typing 1s steps(30, end)
   }
   .profile_content{
     position: absolute;
@@ -98,9 +100,9 @@ const ProfileContainer = styled.div`
         }
         >p{
           margin-bottom: 10px;
-          font-size: 20px;
+          font-size: 25px;
           &.profile_address{
-            font-size: 17px;
+            font-size: 21px;
           }
         }
       }
@@ -165,6 +167,17 @@ const ProfileContainer = styled.div`
           }
         }
       }
+  }
+
+  /* The typing effect */
+  @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+  }
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange }
   }
 `
 

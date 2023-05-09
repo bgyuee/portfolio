@@ -28,7 +28,7 @@ function Home({homeRef}) {
 }
 
 const HomeContainer = styled.div`
-  border: 1px solid red;
+  /* border: 1px solid red; */
   .home_greeting{
     position: absolute;
     top: 0;

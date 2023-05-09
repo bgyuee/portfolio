@@ -4,6 +4,33 @@ const samsungcntVideo = `${process.env.PUBLIC_URL}/videos/samsungcnt.mp4`;
 const movieVideo = `${process.env.PUBLIC_URL}/videos/movie.mp4`;
 const messenger = `${process.env.PUBLIC_URL}/videos/messenger.mp4`;
 
+// 삼성물산 유효성검사
+const samsungcntCSS = `${process.env.PUBLIC_URL}/images/samsungcntCSS.jpg`;
+const samsungcntHTML = `${process.env.PUBLIC_URL}/images/samsungcntHTML.jpg`;
+const samsungcntLightHouse = `${process.env.PUBLIC_URL}/images/samsungcntLightHouse.jpg`;
+const samsungcntsub1css = `${process.env.PUBLIC_URL}/images/samsungcntsub1css.jpg`;
+const samsungcntsub1html = `${process.env.PUBLIC_URL}/images/samsungcntsub1html.jpg`;
+const samsungcntsub1LightHouse = `${process.env.PUBLIC_URL}/images/samsungcntsub1LightHouse.jpg`;
+const samsungcntsub2css = `${process.env.PUBLIC_URL}/images/samsungcntsub2css.jpg`;
+const samsungcntsub2html = `${process.env.PUBLIC_URL}/images/samsungcntsub2html.jpg`;
+const samsungcntsub2LightHouse = `${process.env.PUBLIC_URL}/images/samsungcntsub2LightHouse.jpg`;
+
+// CJONE 유효성검사
+const CJONEcss = `${process.env.PUBLIC_URL}/images/CJONEcss.jpg`;
+const CJONEhtml = `${process.env.PUBLIC_URL}/images/CJONEhtml.jpg`;
+const CJONELightHouse = `${process.env.PUBLIC_URL}/images/CJONELightHouse.jpg`;
+
+// 삼성전기 유효성검사
+const samsungsemcss = `${process.env.PUBLIC_URL}/images/samsungsemcss.jpg`;
+const samsungsemhtml = `${process.env.PUBLIC_URL}/images/samsungsemhtml.jpg`;
+const samsungsemLightHouse = `${process.env.PUBLIC_URL}/images/samsungsemLightHouse.jpg`;
+const samsungsemsub1css = `${process.env.PUBLIC_URL}/images/samsungsemsub1css.jpg`;
+const samsungsemsub1html = `${process.env.PUBLIC_URL}/images/samsungsemsub1html.jpg`;
+const samsungsemsub1LightHouse = `${process.env.PUBLIC_URL}/images/samsungsemsub1LightHouse.jpg`;
+const samsungsemsub2css = `${process.env.PUBLIC_URL}/images/samsungsemsub2css.jpg`;
+const samsungsemsub2html = `${process.env.PUBLIC_URL}/images/samsungsemsub2html.jpg`;
+const samsungsemsub2LightHouse = `${process.env.PUBLIC_URL}/images/samsungsemsub2LightHouse.jpg`;
+
 const projects = [
   {
     class : "samsungcnt",
@@ -31,7 +58,11 @@ const projects = [
     ],
     site : 'https://bgyuee.github.io/samsungcnt_project/',
     github: 'https://github.com/bgyuee/samsungcnt_project',
-    videos : samsungcntVideo
+    videos : samsungcntVideo,
+    validation : [
+      samsungcntCSS, samsungcntHTML, samsungcntLightHouse, samsungcntsub1css, samsungcntsub1html,
+      samsungcntsub1LightHouse, samsungcntsub2css, samsungcntsub2html, samsungcntsub2LightHouse
+    ]
   },
   {
     class : "movie",
@@ -67,7 +98,8 @@ const projects = [
     ],
     site : 'https://bgyuee.github.io/movie_webapp/',
     github: 'https://github.com/bgyuee/movie_webapp',
-    videos : movieVideo
+    videos : movieVideo,
+    validation : []
   },
   {
     class : "messenger",
@@ -98,7 +130,8 @@ const projects = [
     ],
     site : 'https://bgyuee.github.io/Chattingwebapp/',
     github: 'https://github.com/bgyuee/Chattingwebapp',
-    videos : messenger
+    videos : messenger,
+    validation : []
   },
   {
     class : "cjone",
@@ -122,7 +155,10 @@ const projects = [
     ],
     site : 'https://bgyuee.github.io/CJONE_project/',
     github: 'https://github.com/bgyuee/CJONE_project',
-    videos : samsungcntVideo
+    videos : samsungcntVideo,
+    validation : [
+      CJONEcss, CJONEhtml, CJONELightHouse
+    ]
   },
   {
     class : "samsungsem",
@@ -144,7 +180,11 @@ const projects = [
     ],
     site : 'https://bgyuee.github.io/samsungsem/',
     github: 'https://github.com/bgyuee/samsungsem',
-    videos : samsungcntVideo
+    videos : samsungcntVideo,
+    validation : [
+      samsungsemcss, samsungsemhtml, samsungsemLightHouse, samsungsemsub1css, samsungsemsub1html,
+      samsungsemsub1LightHouse, samsungsemsub2css, samsungsemsub2html, samsungsemsub2LightHouse
+    ]
   }
   
 ]
