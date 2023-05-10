@@ -42,7 +42,7 @@ function Profile({profileRef}) {
           {
             myskill.map((skill, index) => (
                 <li 
-                  className={`skill ${(currnetSkill === index) && `skillRotate ${skill.class}`}`}
+                  className={`skill ${skill.class} ${(currnetSkill === index) && `skillRotate`}`}
                   key={index} 
                   style={{background:`url(${skill.image}) no-repeat 50% 50%`}}
                   onMouseEnter={() => {
@@ -82,14 +82,26 @@ const ProfileContainer = styled.div`
     font-size: 40px;
     text-shadow: 2px 2px 4px #1098F7;
     white-space: nowrap;
-    overflow: hidden;
-    animation: typing 1s steps(30, end);
     @media (max-width: 1230px) {
       font-size: 33px;
     }
     @media (max-width: 1089px) {
-      left: 2.2%;
-      font-size: 30px;
+      top: 130px;
+      left: 50%;
+      transform: translateX(-46%);
+      font-size: 24px;
+    }
+    @media (max-width: 720px) {
+      top: 140px;
+      left: 50%;
+      transform: translateX(-54.5%);
+      font-size: 20px;
+    }
+    @media (max-width: 600px) {
+      top: 140px;
+      left: 50%;
+      transform: translateX(-49%);
+      font-size: 16.8px;
     }
   }
   .profile_content{
@@ -100,6 +112,7 @@ const ProfileContainer = styled.div`
     width: 80%;
     display: flex;
     justify-content: space-between;
+
     @media (max-width: 1089px) {
       flex-direction: column;
       align-items: center;
@@ -122,12 +135,41 @@ const ProfileContainer = styled.div`
         }
        
         @media (max-width: 1089px) {
-          width: 700px;
           display: flex;
-          justify-content: space-between;
+          width: 600px;
+          margin-bottom: 30px;
           >img{
             margin-bottom: 0;
-            width: 20%;
+            margin-right: 80px;
+            width: 25%;
+          }
+          >div{
+            >p{
+              margin-bottom: 20px !important;
+              font-size: 40px;
+              &.profile_address{
+                font-size: 40px;
+              }
+            }
+          }
+        }
+        @media (max-width: 600px) {
+          display: flex;
+          width: 450px;
+          margin-bottom: 30px;
+          >img{
+            margin-bottom: 0;
+            margin-right: 20px;
+            width: 34%;
+          }
+          >div{
+            >p{
+              margin-bottom: 0;
+              font-size: 29px;
+              &.profile_address{
+                font-size: 29px;
+              }
+            }
           }
         }
       }
@@ -145,15 +187,28 @@ const ProfileContainer = styled.div`
           color: #1098F7;
           text-align: center;
         }
+        @media (max-width: 600px) {
+            width: 450px;
+          }
         .skill_list{
           display: grid;
           grid-template-columns: repeat(5, 1fr);
           grid-template-rows: repeat(2, 1fr);
-          grid-row-gap: 20px;
-          grid-column-gap: 20px;
-          margin-bottom: 60px;
+          grid-row-gap: 2px;
+          grid-column-gap: 2px;
+          margin-bottom: 0;
           width: 100%;
           height: 260px;
+
+          @media (max-width: 600px) {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            grid-row-gap: 0;
+            grid-column-gap: 0;
+            margin-bottom: 0;
+            width: 100%;
+            height: 120px;
+          }
           >li{
             text-indent: -9999px;
             overflow: hidden;
@@ -161,6 +216,30 @@ const ProfileContainer = styled.div`
             border-radius: 12px;
             cursor: pointer;
             transition: filter 0.3s ease-in-out 0s;
+
+            @media (max-width: 600px) {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              text-indent: 0;
+              overflow: visible;
+              background: none !important;
+              font-size: 30px;
+
+              &.skillRotate{
+                transform: scale(1.2);
+                &.html{color: #E44F26;}
+                &.css{color: #1572B6;}
+                &.sass{color: #CC6699;}
+                &.javascript{color: #F0DB4F;}
+                &.react{color: #61DAFB;}
+                &.redux{color: #764ABC;}
+                &.typescript{color: #007ACC;}
+                &.firebase{color: #EEAB37;}
+                &.github{color: #FFFFFF;}
+              }
+            }
+
             &.skillRotate{
               &.html{filter: drop-shadow(5px 5px 20px #E44F26);}
               &.css{filter: drop-shadow(5px 5px 20px #1572B6);}
@@ -175,7 +254,10 @@ const ProfileContainer = styled.div`
           }
         }
         .skill_description{
-          margin-top: 50px;
+          margin-top: 10px;
+          @media (max-width: 600px) {
+            margin-top: 60px;
+          }
           >h4{
             margin-bottom: 10px;
             font-size: 50px;

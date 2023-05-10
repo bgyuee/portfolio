@@ -106,13 +106,13 @@ function App() {
           </Swiper>
           <Footer contactRef={contactRef} />
           {activeSection !== 3 ? (
-            <div className='mosemove'>
+            <div className="mosemove">
             <div className='mouse'  style={{background:`url(${mouse}) no-repeat 50% 50%`}} />
             <div className='mouseWheelDown' style={{background:`url(${wheelDown}) no-repeat 50% 50%`}} />
         </div>
           ):
           (
-            <div className='mosemove'>
+            <div className='mosemove mouseWheelUp'>
               <div className='mouseWheelUp' style={{background:`url(${wheelUp}) no-repeat 50% 50%`}}
               onClick={() => setActiveSection(0)}
               />

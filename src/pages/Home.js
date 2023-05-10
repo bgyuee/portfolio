@@ -135,7 +135,7 @@ const HomeContainer = styled.div`
         font-size: 40px;
       }
      @media (max-width:725px) {
-      bottom: 400px;
+      bottom: 380px;
       left: 74%;
       font-size: 27px;
     }
