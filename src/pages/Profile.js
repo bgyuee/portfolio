@@ -30,9 +30,11 @@ function Profile({profileRef}) {
       <div className='profile_content'>
           <div className='myinfo'>
             <img src={profileImg} alt='profileImg' />
-            <p className='profile_name'>Name : 박규엽</p>
-            <p className='profile_age'>Age : 27, 1997.09</p>
-            <p className='profile_address'>Address : 서울시 구로구</p>
+            <div>
+              <p className='profile_name'>Name : 박규엽</p>
+              <p className='profile_age'>Age : 27, 1997.09</p>
+              <p className='profile_address'>Address : 서울시 구로구</p>
+            </div>
           </div>
         <div className='skills'>
           <h3 className='skills_title'>MY SKILLS</h3>
@@ -69,7 +71,7 @@ function Profile({profileRef}) {
 const ProfileContainer = styled.div`
 /* border: 1px solid red; */
   position: relative;
-  min-width: 1472px;
+  
   overflow: hidden;
   font-family: 'Do Hyeon', sans-serif;
 
@@ -81,8 +83,14 @@ const ProfileContainer = styled.div`
     text-shadow: 2px 2px 4px #1098F7;
     white-space: nowrap;
     overflow: hidden;
-    animation: 
-    typing 1s steps(30, end)
+    animation: typing 1s steps(30, end);
+    @media (max-width: 1230px) {
+      font-size: 33px;
+    }
+    @media (max-width: 1089px) {
+      left: 2.2%;
+      font-size: 30px;
+    }
   }
   .profile_content{
     position: absolute;
@@ -92,18 +100,34 @@ const ProfileContainer = styled.div`
     width: 80%;
     display: flex;
     justify-content: space-between;
-
+    @media (max-width: 1089px) {
+      flex-direction: column;
+      align-items: center;
+      width: 95%;
+    }
       .myinfo{
         width: 200px;
         >img{
           margin-bottom: 20px;
           width: 100%;
         }
-        >p{
-          margin-bottom: 10px;
-          font-size: 25px;
-          &.profile_address{
-            font-size: 21px;
+        >div{
+          >p{
+            margin-bottom: 10px;
+            font-size: 25px;
+            &.profile_address{
+              font-size: 21px;
+            }
+         }
+        }
+       
+        @media (max-width: 1089px) {
+          width: 700px;
+          display: flex;
+          justify-content: space-between;
+          >img{
+            margin-bottom: 0;
+            width: 20%;
           }
         }
       }
@@ -111,6 +135,9 @@ const ProfileContainer = styled.div`
         display: flex;
         flex-direction: column;
         width: 700px;
+        @media (max-width: 1089px) {
+           width: 600px;
+        }
         .skills_title{
           margin-bottom: 20px;
           font-size: 30px;

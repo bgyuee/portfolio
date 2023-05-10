@@ -5,6 +5,9 @@
   // bottom: 12%;
   // right: 5%;
   transform: translate(20%, -20%) scale(0.8);
+  @media (max-width:1418px) {
+    display: none;
+  }
 }
 
 .body404,

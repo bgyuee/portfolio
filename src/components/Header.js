@@ -75,10 +75,17 @@ const HeaderContainer = styled.div`
     width: 100%;
     height: 80px;
     box-sizing: border-box;
+    @media (max-width:760px) {
+      padding: 0 10px;
+    }
+
     .logo{
       font-size: 50px;
       font-weight: 600;
       cursor: pointer;
+      @media (max-width:760px) {
+        font-size: 25px;
+    }
     }
 
     .nav_meun{
@@ -86,6 +93,10 @@ const HeaderContainer = styled.div`
       justify-content: space-between;
       width: 450px;
       font-size: 25px;
+      @media (max-width:760px) {
+        width: 300px;
+        font-size: 20px;
+    }
       >li{
         position: relative;
         cursor: pointer;
@@ -106,7 +117,6 @@ const HeaderContainer = styled.div`
         }
       }
     }
-    
   }
 `
 
