@@ -2,7 +2,9 @@ import React from 'react';
 
 const samsungcntVideo = `${process.env.PUBLIC_URL}/videos/samsungcnt.mp4`;
 const movieVideo = `${process.env.PUBLIC_URL}/videos/movie.mp4`;
-const messenger = `${process.env.PUBLIC_URL}/videos/messenger.mp4`;
+const messengerVideo = `${process.env.PUBLIC_URL}/videos/messenger.mp4`;
+const cjoneVideo = `${process.env.PUBLIC_URL}/videos/cjone.mp4`;
+const samsungsemVideo = `${process.env.PUBLIC_URL}/videos/samsungsem.mp4`;
 
 // 삼성물산 유효성검사
 const samsungcntCSS = `${process.env.PUBLIC_URL}/images/samsungcntCSS.jpg`;
@@ -130,7 +132,7 @@ const projects = [
     ],
     site : 'https://bgyuee.github.io/Chattingwebapp/',
     github: 'https://github.com/bgyuee/Chattingwebapp',
-    videos : messenger,
+    videos : messengerVideo,
     validation : []
   },
   {
@@ -155,7 +157,7 @@ const projects = [
     ],
     site : 'https://bgyuee.github.io/CJONE_project/',
     github: 'https://github.com/bgyuee/CJONE_project',
-    videos : samsungcntVideo,
+    videos : cjoneVideo,
     validation : [
       CJONEcss, CJONEhtml, CJONELightHouse
     ]
@@ -180,7 +182,7 @@ const projects = [
     ],
     site : 'https://bgyuee.github.io/samsungsem/',
     github: 'https://github.com/bgyuee/samsungsem',
-    videos : samsungcntVideo,
+    videos : samsungsemVideo,
     validation : [
       samsungsemcss, samsungsemhtml, samsungsemLightHouse, samsungsemsub1css, samsungsemsub1html,
       samsungsemsub1LightHouse, samsungsemsub2css, samsungsemsub2html, samsungsemsub2LightHouse
