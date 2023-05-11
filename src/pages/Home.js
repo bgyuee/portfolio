@@ -36,7 +36,7 @@ const HomeContainer = styled.div`
   /* border: 1px solid red; */
   .home_greeting{
     position: absolute;
-    top: 0;
+    top: 0%;
     left: 50%;
     display: flex;
     transform: translateX(-50%);
@@ -71,7 +71,7 @@ const HomeContainer = styled.div`
     }
     @media (max-width:725px) {
       top: 140px;
-      font-size: 210px;
+      font-size: 190px;
     }
   }
   .introduce_img{
@@ -95,7 +95,7 @@ const HomeContainer = styled.div`
         bottom: 10px;
       }
       @media (max-width:725px) {
-        bottom: 20px;
+        bottom: 60px;
       }
     }
   .home_introduce{
@@ -136,8 +136,9 @@ const HomeContainer = styled.div`
       }
      @media (max-width:725px) {
       bottom: 380px;
-      left: 74%;
-      font-size: 27px;
+      text-align: left;
+      width: 450px;
+      font-size: 25px;
     }
   }
     /* The typing effect */

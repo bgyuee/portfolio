@@ -90,7 +90,7 @@ const projects = [
         <span>Cloud Firestore와</span> 연동<br />
         &nbsp;-좋아요, 찜하기 기능  구현<br />
         &nbsp;-해당 영화를 좋아요한 유저들의 Uid를 문서안에 배열로 모아 이 배열의 Length를 <br />
-        &nbsp;-구하고 해당 영화의 하트안에 숫자로 표현<br />
+        &nbsp;구하고 해당 영화의 하트안에 숫자로 표현<br />
         &nbsp;-찜한 영화리스트 데이터들을 불러와 Mypage 화면에 표현해주는 기능을 구현
         </p>
       </>

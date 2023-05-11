@@ -86,19 +86,17 @@ const ProfileContainer = styled.div`
       font-size: 33px;
     }
     @media (max-width: 1089px) {
-      top: 130px;
+      top: 85px;
       left: 50%;
       transform: translateX(-46%);
       font-size: 24px;
     }
     @media (max-width: 720px) {
-      top: 140px;
       left: 50%;
       transform: translateX(-54.5%);
       font-size: 20px;
     }
     @media (max-width: 600px) {
-      top: 140px;
       left: 50%;
       transform: translateX(-49%);
       font-size: 16.8px;
@@ -114,6 +112,7 @@ const ProfileContainer = styled.div`
     justify-content: space-between;
 
     @media (max-width: 1089px) {
+      top: 130px;
       flex-direction: column;
       align-items: center;
       width: 95%;
@@ -137,11 +136,11 @@ const ProfileContainer = styled.div`
         @media (max-width: 1089px) {
           display: flex;
           width: 600px;
-          margin-bottom: 30px;
+          margin-bottom: 0;
           >img{
             margin-bottom: 0;
-            margin-right: 80px;
-            width: 25%;
+            margin-right: 50px;
+            width: 29%;
           }
           >div{
             >p{

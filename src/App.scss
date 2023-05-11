@@ -22,6 +22,13 @@
     top: 117px;
     color: #fff;
     opacity: 0.8;
+    @media (max-width:1275px){
+      top: 290px;
+      opacity: 0.8;
+    }
+    @media (max-width:680px){
+      top: 220px;
+    }
     &:hover{
       opacity: 1;
     }
@@ -32,18 +39,48 @@
   .swiper-button-prev{
     left: 50%;
     transform: translateX(-500%) scale(1.5);
+
+    @media (max-width:1275px){
+      transform: translateX(-1300%) scale(3);
+    }
+    @media (max-width:770px){
+      transform: translateX(-1050%) scale(3);
+      opacity: 0.5;
+    }
+    @media (max-width:680px){
+      transform: translateX(-750%) scale(2);
+    }
   }
   .swiper-button-next{
     right: 50%;
     transform: translateX(500%) scale(1.5);
+
+    @media (max-width:1275px){
+      transform: translateX(1300%) scale(3);
+    }
+    @media (max-width:770px){
+      transform: translateX(1050%) scale(3);
+      opacity: 0.5;
+    }
+    @media (max-width:680px){
+      transform: translateX(750%) scale(2);
+    }
   }
   .swiper-pagination-bullets{
-    top: 110px !important;
+    top: 107.5px !important;
+
+    @media (max-width:1275px){
+      top: 100px !important;
+    }
     .swiper-pagination-bullet{
       width: 15px !important;
       height: 15px !important;
       background-color: #fff;
       opacity: 0.5;
+      @media (max-width:1275px){
+        width: 10px !important;
+        height: 10px !important; 
+      }
       &:hover{
         opacity: 0.8;
       }
@@ -67,7 +104,7 @@
   transform: translateX(-50%);
 
   @media (max-width: 1089px) {
-    bottom: 88%;
+    bottom: 89%;
     &.mouseWheelUp{
       bottom: 2px;
     }

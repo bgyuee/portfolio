@@ -2,9 +2,13 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-scroll';
 import styled from 'styled-components';
 
-function Header({homeRef, profileRef, projectsRef, contactRef}) {
+const drawerMenu = `${process.env.PUBLIC_URL}/images/drawerMenu.png`;
+const drawerMenuClose = `${process.env.PUBLIC_URL}/images/drawerMenuClose.png`;
+
+function Header({ homeRef, profileRef, projectsRef, contactRef }) {
 
   const [activeSection, setActiveSection] = useState('home');
+  const [drawerMenuModal, setDrawerMenuModal] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -30,32 +34,41 @@ function Header({homeRef, profileRef, projectsRef, contactRef}) {
     }
   }, [homeRef, profileRef, projectsRef, contactRef]);
 
+  const drawerModal = () => setDrawerMenuModal(false);
+
   return (
     <HeaderContainer>
       <div className='Nav'>
         <h1 className='logo'>GYUYEOP</h1>
-        <ul className='nav_meun'>
-        <li className={activeSection === "home" ? "active" : ""}>
-          <Link to="home" spy={true} smooth={true} duration={500}>
-            Home
-          </Link>
-        </li>
-        <li className={activeSection === "profile" ? "active" : ""}>
-          <Link to="profile" spy={true} smooth={true} duration={500}>
-            Profile
-          </Link>
-        </li>
-        <li className={activeSection === "projects" ? "active" : ""}>
-          <Link to="projects" spy={true} smooth={true} duration={500}>
-            Projects
-          </Link>
-        </li>
-        <li className={activeSection === "contact" ? "active" : ""}>
-          <Link to="contact" spy={true} smooth={true} duration={500}>
-            Contact
-          </Link>
-        </li>
-        </ul>
+          <ul className={`nav_meun ${!drawerMenuModal ? "nav_none" : ""}`}>
+          <li className={activeSection === "home" ? "active" : ""}>
+            <Link to="home" spy={true} smooth={true} duration={500} onClick={drawerModal}>
+              Home
+            </Link>
+          </li>
+          <li className={activeSection === "profile" ? "active" : ""}>
+            <Link to="profile" spy={true} smooth={true} duration={500} onClick={drawerModal}>
+              Profile
+            </Link>
+          </li>
+          <li className={activeSection === "projects" ? "active" : ""}>
+            <Link to="projects" spy={true} smooth={true} duration={500} onClick={drawerModal}>
+              Projects
+            </Link>
+          </li>
+          <li className={activeSection === "contact" ? "active" : ""}>
+            <Link to="contact" spy={true} smooth={true} duration={500} onClick={drawerModal}>
+              Contact
+            </Link>
+          </li>
+          </ul>
+        
+        <div className='mobile_Nav' 
+        // style={{background : `url(${drawerMenu}) no-repeat 50% 50%`}} 
+        style = {!drawerMenuModal ? {background : `url(${drawerMenu}) no-repeat 50% 50%`} 
+                : {background : `url(${drawerMenuClose}) no-repeat 50% 50%`}}
+        onClick={() => setDrawerMenuModal(prev => !prev)}
+        />
       </div>
     </HeaderContainer>
   )
@@ -75,6 +88,7 @@ const HeaderContainer = styled.div`
     width: 100%;
     height: 80px;
     box-sizing: border-box;
+
     @media (max-width:760px) {
       padding: 0 10px;
     }
@@ -93,11 +107,31 @@ const HeaderContainer = styled.div`
       justify-content: space-between;
       width: 450px;
       font-size: 25px;
-      @media (max-width:760px) {
-        width: 300px;
-        font-size: 20px;
-    }
-      >li{
+
+      @media (max-width:1090px) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+
+        &.nav_none{
+          display: none !important;
+        }
+
+        >li{
+          margin: 30px 0;
+          a{
+          font-size: 75px;
+          }
+        }
+       }
+      >li>a{
         position: relative;
         cursor: pointer;
         &::after{
@@ -116,6 +150,18 @@ const HeaderContainer = styled.div`
           }
         }
       }
+    }
+    .mobile_Nav{
+      width: 50px;
+      height: 50px;
+      background-size: cover !important;
+      display: none;
+      @media (max-width:1090px) {
+        position: fixed;
+        right: 20px;
+        display: block;
+        cursor: pointer;
+       }
     }
   }
 `

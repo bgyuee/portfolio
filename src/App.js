@@ -22,7 +22,7 @@ const wheelUp = `${process.env.PUBLIC_URL}/images/wheelUp.png`;
 
 function App() {
 
-  const [isLoading, setIsLoadting] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
   const projectLength = projects.length;
   const [validationModal, setValidationModal] = useState(false);
 
@@ -64,6 +64,7 @@ function App() {
   useEffect(() => {
     if (sectionRefs.current[activeSection]) {
       sectionRefs.current[activeSection].current.scrollIntoView({ behavior: "smooth" });
+
     }
   }, [activeSection]);
   
