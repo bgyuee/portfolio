@@ -11,6 +11,7 @@ import Background from './components/Background';
 import projects from './data/projects';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y, Mousewheel } from 'swiper';
+import { scroller } from 'react-scroll';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -34,6 +35,7 @@ function App() {
   const sectionRefs = useRef([homeRef, profileRef, projectsRef, contactRef]);
   const [activeSection, setActiveSection] = useState(0);
   const [isScrolling, setIsScrolling] = useState(false);
+  const [homeMove, setHomeMove] = useState(false);
 
   useEffect(() => {
     const handleWheel = (e) => {
@@ -48,7 +50,7 @@ function App() {
   
         setTimeout(() => {
           setIsScrolling(false);
-        }, 500); // Increase this value for a longer delay
+        }, 500);
       } else {
         e.preventDefault();
       }
@@ -68,6 +70,17 @@ function App() {
     }
   }, [activeSection]);
   
+  useEffect(() => {
+    if(homeMove) {
+      scroller.scrollTo("home", {
+        duration: 500,
+        smooth: true,
+      });
+      setHomeMove(false);
+      setActiveSection(0);
+    }
+  }, [homeMove])
+
   return (
     <div className="App">
       {!isLoading ? (
@@ -80,6 +93,7 @@ function App() {
             profileRef={profileRef}
             projectsRef={projectsRef}
             contactRef={contactRef}
+            setAppActiveSection={setActiveSection}
           />
           <Home homeRef={homeRef} />
           <Profile profileRef={profileRef} />
@@ -115,7 +129,7 @@ function App() {
           (
             <div className='mosemove mouseWheelUp'>
               <div className='mouseWheelUp' style={{background:`url(${wheelUp}) no-repeat 50% 50%`}}
-              onClick={() => setActiveSection(0)}
+              onClick={() => setHomeMove(true)}
               />
             </div>
           )}

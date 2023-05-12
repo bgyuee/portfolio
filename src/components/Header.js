@@ -5,16 +5,30 @@ import styled from 'styled-components';
 const drawerMenu = `${process.env.PUBLIC_URL}/images/drawerMenu.png`;
 const drawerMenuClose = `${process.env.PUBLIC_URL}/images/drawerMenuClose.png`;
 
-function Header({ homeRef, profileRef, projectsRef, contactRef }) {
-
+function Header({ 
+  homeRef, 
+  profileRef, 
+  projectsRef, 
+  contactRef, 
+  setAppActiveSection
+}) {
+  
   const [activeSection, setActiveSection] = useState('home');
   const [drawerMenuModal, setDrawerMenuModal] = useState(false);
+
+  const drawerModal = () => setDrawerMenuModal(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if(entry.isIntersecting) {
           setActiveSection(entry.target.id);
+          setAppActiveSection(
+            entry.target.id === `home` ? 0 :
+            entry.target.id === 'profile' ? 1  :
+            entry.target.id === 'projects' ? 2 :
+            entry.target.id === 'contact' ? 3 : 0
+          );
         }
       });
     },
@@ -34,7 +48,8 @@ function Header({ homeRef, profileRef, projectsRef, contactRef }) {
     }
   }, [homeRef, profileRef, projectsRef, contactRef]);
 
-  const drawerModal = () => setDrawerMenuModal(false);
+
+  
 
   return (
     <HeaderContainer>
