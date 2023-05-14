@@ -10,7 +10,7 @@ import { useEffect, useRef, useState } from 'react';
 import Background from './components/Background';
 import projects from './data/projects';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Scrollbar, A11y, Mousewheel } from 'swiper';
+import { Navigation, Pagination, Scrollbar, A11y} from 'swiper';
 import { scroller } from 'react-scroll';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -107,16 +107,16 @@ function App() {
             loop={true} //무한롤링
           >
             <Projects style={{width : `${projectLength*100}%`}}>
+                
             {projects.map((item, index) => (
               <SwiperSlide key={index}>
-                <Project 
-                  key={index}
+                <Project
                   project={item} 
                   validationModal={validationModal} 
                   setValidationModal={setValidationModal} 
-                 />
+                  />
               </SwiperSlide>
-            ))}
+                  ))}
              </Projects>
           </Swiper>
           <Footer contactRef={contactRef} />

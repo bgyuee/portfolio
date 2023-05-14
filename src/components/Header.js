@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-scroll';
-import styled from 'styled-components';
+import * as S from '../pages/Styled';
 
 const drawerMenu = `${process.env.PUBLIC_URL}/images/drawerMenu.png`;
 const drawerMenuClose = `${process.env.PUBLIC_URL}/images/drawerMenuClose.png`;
@@ -52,7 +52,7 @@ function Header({
   
 
   return (
-    <HeaderContainer>
+    <S.HeaderContainer>
       <div className='Nav'>
         <h1 className='logo'>GYUYEOP</h1>
           <ul className={`nav_meun ${!drawerMenuModal ? "nav_none" : ""}`}>
@@ -85,100 +85,8 @@ function Header({
         onClick={() => setDrawerMenuModal(prev => !prev)}
         />
       </div>
-    </HeaderContainer>
+    </S.HeaderContainer>
   )
 }
-
-const HeaderContainer = styled.div`
-  z-index: 1000;
-  position: fixed;
-  width: 100%;
-  height: 80px;
-  
-  .Nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    width: 100%;
-    height: 80px;
-    box-sizing: border-box;
-
-    @media (max-width:760px) {
-      padding: 0 10px;
-    }
-
-    .logo{
-      font-size: 50px;
-      font-weight: 600;
-      cursor: pointer;
-      @media (max-width:760px) {
-        font-size: 25px;
-    }
-    }
-
-    .nav_meun{
-      display: flex;
-      justify-content: space-between;
-      width: 450px;
-      font-size: 25px;
-
-      @media (max-width:1090px) {
-        position: fixed;
-        top: 0;
-        left: 0;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.8);
-
-        &.nav_none{
-          display: none !important;
-        }
-
-        >li{
-          margin: 30px 0;
-          a{
-          font-size: 75px;
-          }
-        }
-       }
-      >li>a{
-        position: relative;
-        cursor: pointer;
-        &::after{
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: #fff;
-            transition: width 0.2s ease-in-out 0s;
-        }
-        &.active{
-          &::after{
-            width: 100%;
-          }
-        }
-      }
-    }
-    .mobile_Nav{
-      width: 50px;
-      height: 50px;
-      background-size: cover !important;
-      display: none;
-      @media (max-width:1090px) {
-        position: fixed;
-        right: 20px;
-        display: block;
-        cursor: pointer;
-       }
-    }
-  }
-`
 
 export default Header;
