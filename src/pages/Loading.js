@@ -1,31 +1,29 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components';
 
 function Loading({setIsLoading}) {
-  const [click, setClick] = useState(true);
-  console.log(click);
+  
+  const [lock, setlock] = useState(false);
 
-  const handleChange = (event) => {
+  useEffect(()=>{
     setTimeout(() => {
-      setIsLoading(event.target.checked);
+      setlock(true);
+      setIsLoading(lock);
     }, 1300);
-  };
-  const handleClick = (prev) => {
-    setClick(!prev);
-  };
+  },[lock])
+
   return (
     <LoadingContainer>
-      {click && <p className='click'>Click</p>}
-      <input type="checkbox" id="toggle" onChange={handleChange} onClick={() => handleClick(click)}/>
-      <div class="lock">
-        <div class="head">
-        <div class="notch"></div>
+      <input type="checkbox" id="toggle" checked={lock} />
+      <div className="lock">
+        <div className="head">
+        <div className="notch"></div>
       </div>
-      <div class="body"></div>
+      <div className="body"></div>
       </div>
-      <div class="key">
-        <div class="top"></div>
-        <div class="bottom">KEY</div>
+      <div className="key">
+        <div className="top"></div>
+        <div className="bottom">KEY</div>
       </div>
     </LoadingContainer>
   )
@@ -42,20 +40,6 @@ const LoadingContainer = styled.div`
   flex-direction: column;
   width: 100%;
   height: 100%;
-
-  .click{
-    z-index: 1000;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-600%);
-    font-size: 30px;
-    animation: click 0.6s linear infinite alternate;
-    @keyframes click {
-      0%{transform: translateX(-50%) translateY(-600%) scale(1)}
-      100%{transform: translateX(-50%) translateY(-600%) scale(1.2)}
-    }
-  }
 
   .lock {
   width: 200px;

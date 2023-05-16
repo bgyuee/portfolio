@@ -37,6 +37,10 @@ function App() {
   const [isScrolling, setIsScrolling] = useState(false);
   const [homeMove, setHomeMove] = useState(false);
 
+  const [profilePage, setProfilePage] = useState(false);
+  const [projectPage, setProjectPage] = useState(false);
+  const [contactPage, setContactPage] = useState(false);
+
   useEffect(() => {
     const handleWheel = (e) => {
       if (!isScrolling) {
@@ -67,6 +71,10 @@ function App() {
   if (sectionRefs.current[activeSection] && sectionRefs.current[activeSection].current) {
     sectionRefs.current[activeSection].current.scrollIntoView({ behavior: "smooth" });
   }
+
+  if(activeSection === 1) setProfilePage(true);
+  if(activeSection === 2) setProjectPage(true);
+  if(activeSection === 3) setContactPage(true);
 }, [activeSection]);
   
   useEffect(() => {
@@ -95,7 +103,11 @@ function App() {
             setAppActiveSection={setActiveSection}
           />
           <Home homeRef={homeRef} />
-          <Profile profileRef={profileRef} />
+          <Profile 
+            profileRef={profileRef} 
+            activeSection={activeSection} 
+            profilePage={profilePage}
+            />
           <Swiper 
             ref={projectsRef} 
             id="projects"
@@ -112,13 +124,17 @@ function App() {
                 <Project
                   project={item} 
                   validationModal={validationModal} 
-                  setValidationModal={setValidationModal} 
-                  />
+                  setValidationModal={setValidationModal}
+                  projectPage={projectPage}
+                />
               </SwiperSlide>
                   ))}
              </Projects>
           </Swiper>
-          <Footer contactRef={contactRef} />
+          <Footer 
+            contactRef={contactRef} 
+            contactPage={contactPage}
+          />
           {activeSection !== 3 ? (
             <div className="mosemove">
             <div className='mouse'  style={{background:`url(${mouse}) no-repeat 50% 50%`}} />

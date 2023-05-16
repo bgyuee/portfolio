@@ -5,14 +5,19 @@ const mockupMobile = `${process.env.PUBLIC_URL}/images/mockypPHONE.png`;
 const mockupPc = `${process.env.PUBLIC_URL}/images/mockuPC.png`;
 const github = `${process.env.PUBLIC_URL}/images/project_github.png`;
 
-function Project({project, validationModal, setValidationModal}) {
+function Project({
+  project, 
+  validationModal, 
+  setValidationModal,
+  projectPage
+}) {
 
   return (
     <S.ProjectContainer className='background_common' id="projects">
       <h2 className='blind'>Projects</h2>
       <div className='project_content'>
         <div className= {`project_info ${project.class}`}>
-          <div className= {`project_video ${project.class}`} style={{
+          <div className= {`project_video ${project.class} ${projectPage && "active"}`} style={{
             background : (project.title === 'Messenger') 
             ? (`url(${mockupMobile}) no-repeat 50% 50%`) 
             : (`url(${mockupPc}) no-repeat 50% 50%`)
@@ -23,7 +28,7 @@ function Project({project, validationModal, setValidationModal}) {
               </video>
             </div>
           </div>
-          <div className='project_Link'>
+          <div className={`project_Link ${projectPage && "active"}`}>
             <div className='sites'>
               <div className='site_link'><a href={`${project.site}`} target='blank'>사이트 바로가기</a></div>
               <div className='site_github' style={{background : `url(${github}) no-repeat 25% 50%, #373743`}}>
@@ -36,7 +41,7 @@ function Project({project, validationModal, setValidationModal}) {
             
           </div>
         </div>
-        <div className='project_description'>
+        <div className={`project_description ${projectPage && "active"}`}>
           <div className='project_foreword'>
             <h3 className={`project_title ${project.class}`}>{project.title}</h3>
             <div className={`project_used ${project.class}`}>

@@ -4,7 +4,13 @@
   // position: absolute;
   // bottom: 12%;
   // right: 5%;
-  transform: translate(20%, -20%) scale(0.8);
+  transform: translate(40%, -20%) scale(0.8);
+  opacity: 0;
+  transition: all 0.5s linear 2s;
+  &.active{
+    transform: translate(20%, -20%) scale(0.8);
+    opacity: 1;
+  }
   @media (max-width:1418px) {
     display: none;
   }

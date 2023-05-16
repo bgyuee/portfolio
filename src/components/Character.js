@@ -1,9 +1,9 @@
 import React from 'react';
 import '../styles/character.scss';
 
-function Character() {
+function Character({profilePage}) {
   return (
-    <div className="error404page">
+    <div className={`error404page ${profilePage && "active"}`}>
         <div className="newcharacter404">
             <div className="chair404"></div>
             <div className="leftshoe404"></div>

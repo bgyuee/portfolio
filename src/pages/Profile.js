@@ -5,7 +5,7 @@ import * as S from './Styled';
 
 const profileImg = `${process.env.PUBLIC_URL}/images/profileImg.png`;
 
-function Profile({profileRef}) {
+function Profile({profileRef, profilePage}) {
 
   const [currnetSkill, setCurrentSkill]  = useState(0);
   const [isHovered, setIsHovered] = useState(false);
@@ -25,9 +25,9 @@ function Profile({profileRef}) {
   return (
     <S.ProfileContainer className='background_common' id='profile' ref={profileRef}>
        <h2 className='blind'>Profile</h2>
-       <p className='myIntroduce'>끊임없이 발전하고 성장하기 위해 열정과 끈기로 무장한 개발자 박규엽입니다.</p>
+       <p className={`myIntroduce ${profilePage && "active"}`}>끊임없이 발전하고 성장하기 위해 열정과 끈기로 무장한 개발자 박규엽입니다.</p>
       <div className='profile_content'>
-          <div className='myinfo'>
+          <div className={`myinfo ${profilePage && "active"}`}>
             <img src={profileImg} alt='profileImg' />
             <div>
               <p className='profile_name'>Name : 박규엽</p>
@@ -36,8 +36,8 @@ function Profile({profileRef}) {
             </div>
           </div>
         <div className='skills'>
-          <h3 className='skills_title'>MY SKILLS</h3>
-          <ul className='skill_list'>
+          <h3 className={`skills_title ${profilePage && "active"}`}>MY SKILLS</h3>
+          <ul className={`skill_list ${profilePage && "active"}`}>
           {
             myskill.map((skill, index) => (
                 <li 
@@ -56,12 +56,12 @@ function Profile({profileRef}) {
             ))
           }
           </ul>
-          <div className='skill_description'>
+          <div className={`skill_description ${profilePage && "active"}`}>
                   <h4 className={myskill[currnetSkill].class}>{myskill[currnetSkill].title}</h4>
                   <p>{myskill[currnetSkill].description}</p>
            </div>
         </div>
-        <Character />
+        <Character profilePage={profilePage} />
       </div>
     </S.ProfileContainer>
   )

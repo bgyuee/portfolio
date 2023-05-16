@@ -221,7 +221,6 @@ export const HomeContainer = styled.div`
 export const ProfileContainer = styled.div`
 /* border: 1px solid red; */
   position: relative;
-  
   overflow: hidden;
   font-family: 'Do Hyeon', sans-serif;
 
@@ -231,23 +230,31 @@ export const ProfileContainer = styled.div`
     left: 10%;
     font-size: 40px;
     white-space: nowrap;
+    transform: translateY(-40%);
+    opacity: 0;
+    transition: transform 0.5s linear 0.5s, opacity  0.5s linear 0.5s;
+    &.active{
+      transform: translateY(0);
+      opacity: 1;
+    }
+
     @media (max-width: 1230px) {
       font-size: 33px;
     }
     @media (max-width: 1089px) {
       top: 90px;
       left: 50%;
-      transform: translateX(-46%);
+      transform: translateX(-46%) !important;
       font-size: 24px;
     }
     @media (max-width: 720px) {
       left: 50%;
-      transform: translateX(-54.5%);
+      transform: translateX(-54.5%) !important;
       font-size: 20px;
     }
     @media (max-width: 600px) {
       left: 50%;
-      transform: translateX(-49%);
+      transform: translateX(-49%) !important;
       font-size: 16px;
     }
   }
@@ -268,6 +275,13 @@ export const ProfileContainer = styled.div`
     }
       .myinfo{
         width: 200px;
+        transform: translateX(-30%);
+        opacity: 0;
+        transition: transform 0.5s linear 0.7s, opacity 0.5s linear 0.7s;
+        &.active{
+          transform: translateX(0);
+          opacity: 1;
+        }
         >img{
           margin-bottom: 20px;
           width: 100%;
@@ -334,6 +348,13 @@ export const ProfileContainer = styled.div`
           font-weight: 900;
           color: #1098F7;
           text-align: center;
+          transform: translateY(-30%);
+          opacity: 0;
+          transition: transform 0.5s linear 1s, opacity 0.5s linear 1s;
+          &.active{
+            transform: translateY(0);
+            opacity: 1;
+          }
         }
         @media (max-width: 600px) {
             width: 450px;
@@ -347,6 +368,13 @@ export const ProfileContainer = styled.div`
           margin-bottom: 0;
           width: 100%;
           height: 260px;
+          transform: translateY(20%);
+          opacity: 0;
+          transition: transform 0.5s linear 1.3s, opacity 0.5s linear 1.3s;
+          &.active{
+            transform: translateY(0);
+            opacity: 1;
+          }
 
           @media (max-width: 600px) {
             grid-template-columns: repeat(3, 1fr);
@@ -405,6 +433,13 @@ export const ProfileContainer = styled.div`
           margin-top: 10px;
           @media (max-width: 600px) {
             margin-top: 60px;
+          }
+          transform: translateY(20%);
+          opacity: 0;
+          transition: transform 0.5s linear 1.7s, opacity 0.5s linear 1.7s;
+          &.active{
+            transform: translateY(0);
+            opacity: 1;
           }
           >h4{
             margin-bottom: 10px;
@@ -510,6 +545,13 @@ export const ProjectContainer = styled.div`
         background-size: cover !important;
         box-sizing: border-box;
         border-radius: 24px 24px 0 0;
+        transform: translateY(-20%);
+        opacity: 0;
+        transition: transform 0.5s linear 0.5s, opacity 0.5s linear 0.5s;
+        &.active{
+          transform: translateX(0);
+          opacity: 1;
+        }
         @media (max-width:1650px){
           height: 360px;
         }
@@ -586,6 +628,13 @@ export const ProjectContainer = styled.div`
         width: 100%;
         justify-content: space-between;
         font-weight: 500;
+        transform: translateY(100%);
+        opacity: 0;
+        transition: transform 0.5s linear 1s opacity 0.5s linear 1s;
+        &.active{
+          transform: translateY(0);
+          opacity: 1;
+        }
 
         @media (max-width:680px){
           flex-direction: column;
@@ -655,6 +704,13 @@ export const ProjectContainer = styled.div`
       position: relative;
       width: 750px;
       height: 400px;
+      transform: translateX(10%);
+      opacity: 0;
+      transition: transform 0.5s linear 1.3s, opacity 0.5s linear 1.3s;
+      &.active{
+        transform: translateX(0);
+        opacity: 1;
+      }
       
       @media (max-width:1650px) {
         width: 600px;
@@ -849,6 +905,19 @@ export const FooterContainer = styled.div`
  align-items: center;
  box-sizing: border-box;
  
+ .contact_container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(20%);
+  opacity: 0;
+  transition: transform 0.5s linear 0.5s, opacity 0.5s linear 0.5s;
+  &.active{
+    transform: translateY(0);
+    opacity: 1;
+  }
+ 
  .contact_title{
   margin-bottom: 20px;
 
@@ -908,4 +977,5 @@ export const FooterContainer = styled.div`
       color: #fff;
     }
  }
+}
 `;
