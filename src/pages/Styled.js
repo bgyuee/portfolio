@@ -52,8 +52,13 @@ export const HeaderContainer = styled.div`
 
         >li{
           margin: 30px 0;
+          transition: transform 0.2s linear 0s;
+          &:hover{
+            transform: scale(1.2);
+           }
+
           a{
-          font-size: 75px;
+           font-size: 60px;
           }
         }
        }
@@ -96,10 +101,10 @@ export const HomeContainer = styled.div`
   /* border: 1px solid red; */
   .home_greeting{
     position: absolute;
-    top: 0%;
+    top: 50%;
     left: 50%;
     display: flex;
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateY(-65%);
     font-size: 34vw;
     font-weight: 700;
     color: #1098F7;
@@ -120,17 +125,17 @@ export const HomeContainer = styled.div`
     }
 
     @media (max-width:1400px) {
-      top: 100px;
+      transform: translateX(-50%) translateY(-65%);
     }
     @media (max-width:1024px) {
-      top: 80px;
+      transform: translateX(-50%) translateY(-80%);
     }
     @media (max-width:910px) {
-      top: 130px;
+      transform: translateX(-50%) translateY(-85%);
       font-size: 300px;
     }
     @media (max-width:725px) {
-      top: 140px;
+      transform: translateX(-50%) translateY(-130%);
       font-size: 190px;
     }
   }
@@ -164,12 +169,12 @@ export const HomeContainer = styled.div`
     left: 350px;
     display: flex;
     flex-direction: column;
-    font-size: 3.8vw;
+    font-size: 3vw;
     font-weight: 600;
+    text-shadow: 2px 2px 4px #1098F7;
     opacity: 0;
     transition: opacity 0s linear 2s;
     >span{
-      font-weight: 400;
       opacity: 0;
       transition: opacity 0s linear 2.6s;
     }
@@ -192,13 +197,13 @@ export const HomeContainer = styled.div`
         left: 50%;
         width: 725px;
         transform: translateX(-50%);
-        font-size: 40px;
+        font-size: 33px;
       }
      @media (max-width:725px) {
       bottom: 380px;
       text-align: left;
       width: 450px;
-      font-size: 25px;
+      font-size: 20px;
     }
   }
     /* The typing effect */
@@ -225,13 +230,12 @@ export const ProfileContainer = styled.div`
     top: 100px;
     left: 10%;
     font-size: 40px;
-    text-shadow: 2px 2px 4px #1098F7;
     white-space: nowrap;
     @media (max-width: 1230px) {
       font-size: 33px;
     }
     @media (max-width: 1089px) {
-      top: 85px;
+      top: 90px;
       left: 50%;
       transform: translateX(-46%);
       font-size: 24px;
@@ -244,7 +248,7 @@ export const ProfileContainer = styled.div`
     @media (max-width: 600px) {
       left: 50%;
       transform: translateX(-49%);
-      font-size: 16.8px;
+      font-size: 16px;
     }
   }
   .profile_content{
@@ -290,9 +294,9 @@ export const ProfileContainer = styled.div`
           >div{
             >p{
               margin-bottom: 20px !important;
-              font-size: 40px;
+              font-size: 30px;
               &.profile_address{
-                font-size: 40px;
+                font-size: 30px;
               }
             }
           }
@@ -309,9 +313,9 @@ export const ProfileContainer = styled.div`
           >div{
             >p{
               margin-bottom: 0;
-              font-size: 29px;
+              font-size: 20px;
               &.profile_address{
-                font-size: 29px;
+                font-size: 20px;
               }
             }
           }
@@ -851,12 +855,19 @@ export const FooterContainer = styled.div`
   font-size: 80px;
   font-weight: 600;
   color: #1098F7;
+  @media (max-width: 600px) {
+    font-size: 60px;
+  }
  }
  .contact_info{
   font-family: 'Do Hyeon', sans-serif;
   margin-bottom: 50px;
   p{
     font-size: 40px;
+
+    @media (max-width: 600px){
+      font-size: 30px;
+    }
     &.contact_phonenumber{
       margin-bottom: 20px;
     }
@@ -866,6 +877,10 @@ export const FooterContainer = styled.div`
       >span{
         margin-left: 10px;
         font-size: 25px;
+
+        @media (max-width: 600px){
+        font-size: 20px;
+    }
       }
     }
   }

@@ -26,8 +26,8 @@ function Home({homeRef}) {
           <img src={introduceImg} alt='Introduce' />
         </div>
       <div className={`home_introduce ${hello ? "hello" : ""}`}>
-        <p>I’m a developer</p>
-        <span>armed with passion and persistence.</span>
+        <p>안녕하세요!</p>
+        <span>열정과 끈기로 무장한 개발자 박규엽입니다.</span>
       </div>
     </S.HomeContainer>
     </>

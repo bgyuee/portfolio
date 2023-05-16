@@ -23,7 +23,7 @@ const wheelUp = `${process.env.PUBLIC_URL}/images/wheelUp.png`;
 
 function App() {
 
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const projectLength = projects.length;
   const [validationModal, setValidationModal] = useState(false);
 
@@ -64,11 +64,10 @@ function App() {
   }, [isScrolling]);
 
   useEffect(() => {
-    if (sectionRefs.current[activeSection]) {
-      sectionRefs.current[activeSection].current.scrollIntoView({ behavior: "smooth" });
-
-    }
-  }, [activeSection]);
+  if (sectionRefs.current[activeSection] && sectionRefs.current[activeSection].current) {
+    sectionRefs.current[activeSection].current.scrollIntoView({ behavior: "smooth" });
+  }
+}, [activeSection]);
   
   useEffect(() => {
     if(homeMove) {
@@ -83,11 +82,11 @@ function App() {
 
   return (
     <div className="App">
+      <Background />
       {!isLoading ? (
-        <Loading />
+        <Loading setIsLoading={setIsLoading} />
       ) : (
         <>
-          <Background />
           <Header 
             homeRef={homeRef}
             profileRef={profileRef}
