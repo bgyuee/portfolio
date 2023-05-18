@@ -49,6 +49,7 @@ function Project({
             </div>
           </div>
             <p className={`title_additional ${project.class}`}>개인프로젝트</p>
+            <p className='project_period'>작업기간 : {project.period}</p>
             <div className='project_explanation'>
               {project.explanation}
             </div>

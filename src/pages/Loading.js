@@ -75,21 +75,21 @@ const LoadingContainer = styled.div`
   width: 100px;
   height: 135px;
   border-radius: 50% 50% 10% 10%;
-  background: black;
+  background: #252525;
   margin: 23px 25px;
   box-shadow: -2px -8px 8px 2px #ccc;
 }
 .head:after {
   width: 40px;
   height: 30px;
-  background: black;
+  background: #252525;
   margin: 120px 122px;
 }
 .notch {
   position: absolute;
   width: 15px;
   height: 15px;
-  background: black;
+  background: #252525;
   margin: 95px 125px;
   border-radius: 0 30% 30% 0;
   box-shadow: inset -4px 2px 2px 0px #bbb;
@@ -141,14 +141,14 @@ const LoadingContainer = styled.div`
   width: 5px;
   height: 12px;
   border-radius: 70% 0 0 30%;
-  background: black;
+  background: #252525;
   margin: 55px 17px;
 }
 .key .top:before {
   width: 5px;
   height: 12px;
   border-radius: 30% 0 0 70%;
-  background: black;
+  background: #252525;
   margin: 42px 17px;
 }
 .key .bottom {
@@ -168,7 +168,7 @@ const LoadingContainer = styled.div`
   width: 40px;
   height: 30px;
   border-radius: 50%;
-  background: black;
+  background: #252525;
   margin: 30px 15px;
   box-shadow: 0px 0px 8px 4px #555;
 }

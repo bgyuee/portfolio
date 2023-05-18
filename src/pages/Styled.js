@@ -823,7 +823,7 @@ export const ProjectContainer = styled.div`
       }
     }
     .title_additional{
-      margin: 10px 0 20px 0;
+      margin: 10px 0 10px 0;
       font-size: 15px;
       color: #EE942B;
 
@@ -864,6 +864,11 @@ export const ProjectContainer = styled.div`
           right: 30px;
         }
       }
+    }
+    .project_period{
+      font-weight: 600;
+      color: #1098F7;
+      margin-bottom: 10px;
     }
     .project_explanation{
       display: flex;
