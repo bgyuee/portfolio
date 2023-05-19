@@ -1,6 +1,7 @@
 import React from 'react';
 import Validation from '../components/Validation';
 import * as S from './Styled';
+
 const mockupMobile = `${process.env.PUBLIC_URL}/images/mockypPHONE.png`;
 const mockupPc = `${process.env.PUBLIC_URL}/images/mockuPC.png`;
 const github = `${process.env.PUBLIC_URL}/images/project_github.png`;

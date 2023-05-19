@@ -108,6 +108,7 @@ export const HomeContainer = styled.div`
     font-size: 34vw;
     font-weight: 700;
     color: #1098F7;
+    text-shadow: 5px 5px 10px gray;
     >div{
       transform: translateY(-500px);
       opacity: 0;
