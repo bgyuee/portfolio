@@ -705,6 +705,7 @@ export const ProfileContainer = styled.div`
                 &.typescript{color: #007ACC;}
                 &.firebase{color: #EEAB37;}
                 &.github{color: #FFFFFF;}
+                &.figma{color: #FF7262;}
               }
             }
 
@@ -718,6 +719,7 @@ export const ProfileContainer = styled.div`
               &.typescript{filter: drop-shadow(5px 5px 20px #007ACC);}
               &.firebase{filter: drop-shadow(5px 5px 20px #EEAB37);}
               &.github{filter: drop-shadow(5px 5px 20px #FFFFFF);}
+              &.figma{filter: drop-shadow(5px 5px 20px #FF7262);}
             }
           }
         }
@@ -746,6 +748,7 @@ export const ProfileContainer = styled.div`
             &.typescript{color: #007ACC;}
             &.firebase{color: #EEAB37;}
             &.github{color: #FFFFFF;}
+            &.figma{color: #FF7262;}
           }
           >p{
             font-size: 25px;

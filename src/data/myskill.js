@@ -7,6 +7,7 @@ const redux = `${process.env.PUBLIC_URL}/images/icon_redux.png`;
 const typescript = `${process.env.PUBLIC_URL}/images/icon_typescript.png`;
 const firebase = `${process.env.PUBLIC_URL}/images/icon_firebase.png`;
 const github = `${process.env.PUBLIC_URL}/images/icon_github.png`;
+const figma = `${process.env.PUBLIC_URL}/images/icon_figma.png`;
 
 
 const myskil = [
@@ -63,6 +64,12 @@ const myskil = [
     title: "Github",
     description: "commit, push, pull, clone 등 git 명령어를 사용하여 레파지토리에 접근할 수 있습니다.",
     image: github
+  },
+  {
+    class: "figma",
+    title: "Figma",
+    description: "데스크톱, 모바일 UI/UX 시안을 작업 할 수 있으며, 디버깅을 잘 활용할 수 있습니다.",
+    image: figma
   }
 ]
 
