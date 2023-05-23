@@ -49,9 +49,11 @@ function Project({
               {project.used}
             </div>
           </div>
-            <p className={`title_additional ${project.class}`}>개인프로젝트</p>
+            {/* <p className='project_outline'>프로젝트 개요 :</p> */}
+            <p className={`title_additional ${project.class}`}>기여도 : 100%</p>
             <p className='project_period'>작업기간 : {project.period}</p>
             <div className='project_explanation'>
+              <h4>주요업무</h4>
               {project.explanation}
             </div>
         </div>

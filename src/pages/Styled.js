@@ -383,7 +383,7 @@ export const HomeContainer = styled.div`
     font-size: 34vw;
     font-weight: 700;
     color: #1098F7;
-    text-shadow: 5px 5px 10px gray;
+    text-shadow: 5px 5px 10px #105FF7;
     >div{
       transform: translateY(-500px);
       opacity: 0;
@@ -550,7 +550,7 @@ export const ProfileContainer = styled.div`
       width: 95%;
     }
       .myinfo{
-        width: 200px;
+        width: 250px;
         transform: translateX(-30%);
         opacity: 0;
         transition: transform 0.5s linear 0.7s, opacity 0.5s linear 0.7s;
@@ -560,14 +560,24 @@ export const ProfileContainer = styled.div`
         }
         >img{
           margin-bottom: 20px;
-          width: 100%;
+          width: 80%;
         }
         >div{
           >p{
             margin-bottom: 10px;
-            font-size: 25px;
-            &.profile_address{
-              font-size: 21px;
+            font-size: 20px;
+            &.profile_email{
+              font-size: 16px;
+            }
+            &.profile_github{
+              font-size: 16px;
+              a{
+                color: #fff;
+                text-decoration: none;
+                &:hover{
+                  color: #1098F7;
+                }
+              }
             }
          }
         }
@@ -585,8 +595,11 @@ export const ProfileContainer = styled.div`
             >p{
               margin-bottom: 20px !important;
               font-size: 30px;
-              &.profile_address{
-                font-size: 30px;
+              &.profile_email{
+                font-size: 25px;
+              }
+              &.profile_github{
+                font-size: 25px;
               }
             }
           }
@@ -604,8 +617,11 @@ export const ProfileContainer = styled.div`
             >p{
               margin-bottom: 0;
               font-size: 20px;
-              &.profile_address{
-                font-size: 20px;
+              &.profile_email{
+                font-size: 16px;
+              }
+              &.profile_github{
+                font-size: 16px;
               }
             }
           }
@@ -1008,7 +1024,7 @@ export const ProjectContainer = styled.div`
           margin-bottom: 10px;
         }
         .project_title{
-          font-size: 30px;
+          font-size: 40px;
           font-weight: 600;
 
           @media (max-width:1650px) {
@@ -1038,14 +1054,17 @@ export const ProjectContainer = styled.div`
             width: 370px !important;
           }
           &.samsungcnt{
-            width: 450px;
+            width: 550px;
 
             @media (max-width:1275px){
             width: 600px;
-            font-size: 16.5px;
+            font-size: 15px;
             }
             @media (max-width:680px){
-              font-size: 12px;
+              font-size: 11px;
+              &>p:nth-of-type(4){
+                display: none;
+              }
             }
           }
           &.movie{
@@ -1067,23 +1086,27 @@ export const ProjectContainer = styled.div`
           &.messenger{
             width: 400px;
             font-size: 16px;
-          }
-          &.cjone{
-            width: 450px;
-            @media (max-width:1275px){
-              font-size: 17px;
-            }
             @media (max-width:680px){
               font-size: 12px;
+            }
+          }
+          &.cjone{
+            width: 550px;
+            @media (max-width:1275px){
+              font-size: 15px;
+            }
+            @media (max-width:680px){
+              font-size: 11px;
+              &>p:nth-of-type(4) {display: none;}
             }
           }
           &.samsungsem{
-            width: 450px;
+            width: 500px;
             @media (max-width:1275px){
-              font-size: 17px;
+              font-size: 15px;
             }
             @media (max-width:680px){
-              font-size: 12px;
+              font-size: 11px;
             }
           }
           >p{
@@ -1152,6 +1175,10 @@ export const ProjectContainer = styled.div`
       justify-content: space-between;
       width: 100%;
       font-size: 17px;
+      h4{
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
       @media (max-width:1650px){
         font-size: 15px;
       }
@@ -1163,7 +1190,7 @@ export const ProjectContainer = styled.div`
       }
       >p{
         margin-bottom: 20px;
-
+        margin-left: 10px;
         @media (max-width:1275px){
           margin-bottom: 5px;
         }
