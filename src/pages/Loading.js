@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import projects from '../data/projects';
 import * as S from './Styled';
-import styled from 'styled-components';
 
 function Loading({setIsLoading}) {
   

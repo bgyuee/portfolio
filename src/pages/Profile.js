@@ -31,7 +31,7 @@ function Profile({profileRef, profilePage}) {
             <img src={profileImg} alt='profileImg' />
             <div>
               <p className='profile_name'>Name : 박규엽</p>
-              <p className='profile_phone'>전화번호 : 010-6771-5396</p>
+              <p className='profile_phone'>Phone : 010-6771-5396</p>
               <p className='profile_email'>E-mail : parkgyuyeop@naver.com</p>
               <p className='profile_github'><a href='https://github.com/bgyuee' target='blink'>GitHub : https://github.com/bgyuee</a></p>
             </div>

@@ -769,6 +769,23 @@ export const ProfileContainer = styled.div`
   }
 `;
 
+export const ProjectsContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .ProjectGrop{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    transform: translateY(50px);
+    width: 90%;
+    height: 90%;
+  }
+`
+export const ProjectPreviewContainer = styled.div`
+  
+`;
+
 export const ProjectContainer = styled.div`
   /* border: 1px solid red; */
   position: relative;

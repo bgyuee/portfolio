@@ -18,4 +18,4 @@ function Footer({contactRef, contactPage}) {
   )
 }
 
-export default Footer
+export default Footer;
