@@ -1,17 +1,14 @@
-import React, { useState } from 'react';
-import Validation from './Validation';
-import * as S from '../pages/Styled';
+import React from 'react';
+import BackButton from './BackButton';
 
 const mockupMobile = `${process.env.PUBLIC_URL}/images/mockypPHONE.png`;
 const mockupPc = `${process.env.PUBLIC_URL}/images/mockuPC.png`;
 const github = `${process.env.PUBLIC_URL}/images/project_github.png`;
 
-function Project({project, projectPage}) {
-  const [validationModal, setValidationModal] = useState(false);
+export default function ProjectContent({project, projectPage, setValidationModal, setProjectOrder}) {
   return (
-    <S.ProjectContainer className='background_common'>
-      <h2 className='blind'>Projects</h2>
-      <div className='project_content'>
+    <div className='project_content'>
+        <BackButton setProjectOrder={setProjectOrder} />
         <div className= {`project_info ${project.class}`}>
           <div className= {`project_video ${project.class} ${projectPage && "active"}`} style={{
             background : (project.title === 'Messenger') 
@@ -32,9 +29,12 @@ function Project({project, projectPage}) {
               </div>
             </div>
             {project.class !== "movie" && project.class !== "messenger" &&
-            <div className='validation' onClick={() => setValidationModal(prev => (!prev))}>유효성 검사</div>
+              <div 
+                className='validation' 
+                onClick={() => setValidationModal(prev => (!prev))}>
+                유효성 검사
+              </div>
             }
-            
           </div>
         </div>
         <div className={`project_description ${projectPage && "active"}`}>
@@ -52,13 +52,5 @@ function Project({project, projectPage}) {
             </div>
         </div>
       </div>
-      {validationModal && <Validation 
-        setValidationModal={setValidationModal} 
-        validation={project.validation} 
-        title={project.title}
-        />}
-    </S.ProjectContainer>
   )
 }
-
-export default Project;

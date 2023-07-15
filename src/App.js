@@ -1,6 +1,5 @@
 import './App.scss';
 import Home from './pages/Home';
-import Loading from './pages/Loading';
 import Profile from './pages/Profile';
 import Footer from './pages/Footer';
 import Header from './components/Header';
@@ -13,8 +12,6 @@ import Projects from './pages/Projects';
 
 
 function App() {
-
-  const [isLoading, setIsLoading] = useState(false);
 
   const homeRef = useRef(null);
   const profileRef = useRef(null);
@@ -80,38 +77,34 @@ function App() {
   return (
     <div className="App">
       <Background />
-      {!isLoading ? (
-        <Loading setIsLoading={setIsLoading} />
-      ) : (
-        <>
-          <Header 
-            homeRef={homeRef}
-            profileRef={profileRef}
-            projectsRef={projectsRef}
-            contactRef={contactRef}
-            setAppActiveSection={setActiveSection}
-          />
-          <Home homeRef={homeRef} />
-          <Profile 
-            profileRef={profileRef} 
-            activeSection={activeSection} 
-            profilePage={profilePage}
-            />
-          <Projects 
-            projectsRef={projectsRef} 
-            id="projects"
-            projectPage={projectPage} />
-          <Footer 
-            contactRef={contactRef} 
-            contactPage={contactPage}
-          />
-          {activeSection !== 3 ? (
-            <Mousemove />
-          ):
-          (
-            <MouseWheelup setHomeMove={setHomeMove} />
-          )}
-      </>
+      <Header 
+        homeRef={homeRef}
+        profileRef={profileRef}
+        projectsRef={projectsRef}
+        contactRef={contactRef}
+        setAppActiveSection={setActiveSection}
+      />
+      <Home homeRef={homeRef} />
+      <Profile 
+        profileRef={profileRef} 
+        activeSection={activeSection} 
+        profilePage={profilePage}
+        />
+      <Projects 
+        id="projects"
+        projectsRef={projectsRef} 
+        projectPage={projectPage}
+        activeSection={activeSection}
+      />
+      <Footer 
+        contactRef={contactRef} 
+        contactPage={contactPage}
+      />
+      {activeSection !== 3 ? (
+        <Mousemove />
+      ):
+      (
+        <MouseWheelup setHomeMove={setHomeMove} />
       )}
     </div>
   );

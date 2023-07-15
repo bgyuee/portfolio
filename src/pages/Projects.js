@@ -1,31 +1,40 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import projects from '../data/projects';
-import Project from '../components/Project';
+import Project from './Project';
 import * as S from '../pages/Styled';
 import ProjectPreview from '../components/ProjectPreview';
 
-function Projects({projectsRef, projectPage}) {
+function Projects({projectsRef, projectPage, activeSection}) {
+  useEffect(() => {
+    setProjectOrder(null)
+  }, [activeSection]);
 
-  const {projectOrder, setProjectOrder} = useState("");
+  const [projectOrder, setProjectOrder] = useState(null);
+  const findProject = projects.find(project => project.title === projectOrder);
 
   return (
    <S.ProjectsContainer className='background_common' id="projects" ref={projectsRef}>
-      <div className='ProjectGrop'>
-        {
-          projects.map(project => (
-              <ProjectPreview 
-                project={project} 
-                setProjectOrder={setProjectOrder} 
-                projectPage={projectPage}
-              />
-          ))
-        }
-        {/* 버튼클릭시 setProjectOrder=해당배열번호로 바꾸기 */}
-      </div>
-    {/* <Project 
-      project={projects[projectOrder]} 
-      projectPage={projectPage} 
-    /> */}
+      {
+        (!projectOrder | activeSection !== 2)? (
+          <div className='ProjectGrop'>
+            {
+              projects.map((project, index) => (
+                  <ProjectPreview
+                    project={project} 
+                    setProjectOrder={setProjectOrder}
+                    key={index}
+                  />
+              ))
+            }
+          </div>
+        ):(
+          <Project
+            project={findProject}
+            projectPage={projectPage}
+            setProjectOrder={setProjectOrder}
+          />
+        )
+      }
    </S.ProjectsContainer> 
   )
 }

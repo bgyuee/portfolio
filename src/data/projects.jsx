@@ -33,6 +33,13 @@ const samsungsemsub2css = `${process.env.PUBLIC_URL}/images/samsungsemsub2css.jp
 const samsungsemsub2html = `${process.env.PUBLIC_URL}/images/samsungsemsub2html.jpg`;
 const samsungsemsub2LightHouse = `${process.env.PUBLIC_URL}/images/samsungsemsub2LightHouse.jpg`;
 
+// 각 프로젝트 첫페이지
+const samsungcntpage = `${process.env.PUBLIC_URL}/images/samsungcntpage.png`;
+const moviepage = `${process.env.PUBLIC_URL}/images/moviepage.png`;
+const messengerpage = `${process.env.PUBLIC_URL}/images/messengerpage.png`;
+const cjonepage = `${process.env.PUBLIC_URL}/images/cjonepage.png`;
+const samsungsempage = `${process.env.PUBLIC_URL}/images/samsungsempage.png`;
+
 const projects = [
   {
     class : "movie",
@@ -71,6 +78,7 @@ const projects = [
     site : 'https://bgyuee.github.io/movie_webapp/',
     github: 'https://github.com/bgyuee/movie_webapp',
     videos : movieVideo,
+    image : moviepage,
     validation : []
   },
   {
@@ -105,6 +113,7 @@ const projects = [
     site : 'https://bgyuee.github.io/Chattingwebapp/',
     github: 'https://github.com/bgyuee/Chattingwebapp',
     videos : messengerVideo,
+    image : messengerpage,
     validation : []
   },
   {
@@ -140,6 +149,7 @@ const projects = [
     site : 'https://bgyuee.github.io/samsungcnt_project/',
     github: 'https://github.com/bgyuee/samsungcnt_project',
     videos : samsungcntVideo,
+    image : samsungcntpage,
     validation : [
       samsungcntCSS, samsungcntHTML, samsungcntLightHouse, samsungcntsub1css, samsungcntsub1html,
       samsungcntsub1LightHouse, samsungcntsub2css, samsungcntsub2html, samsungcntsub2LightHouse
@@ -172,6 +182,7 @@ const projects = [
     site : 'https://bgyuee.github.io/CJONE_project/',
     github: 'https://github.com/bgyuee/CJONE_project',
     videos : cjoneVideo,
+    image : cjonepage,
     validation : [
       CJONEcss, CJONEhtml, CJONELightHouse
     ]
@@ -200,6 +211,7 @@ const projects = [
     site : 'https://bgyuee.github.io/samsungsem/',
     github: 'https://github.com/bgyuee/samsungsem',
     videos : samsungsemVideo,
+    image : samsungsempage,
     validation : [
       samsungsemcss, samsungsemhtml, samsungsemLightHouse, samsungsemsub1css, samsungsemsub1html,
       samsungsemsub1LightHouse, samsungsemsub2css, samsungsemsub2html, samsungsemsub2LightHouse
