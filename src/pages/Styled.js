@@ -504,9 +504,34 @@ export const ProjectsContainer = styled.div`
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 30px;
-    transform: translateY(50px);
+    margin-top: 50px;
     width: 85%;
     height: 85%;
+    @media (max-width:1216px) {
+      width: 900px;  
+    }
+    @media (max-width:940px) {
+      width: 800px;  
+      height: 600px;
+    }
+    @media (max-width:830px) {
+      width: 700px;  
+      height: 500px;
+    }
+    @media (max-width:730px) {
+      margin-top: -50px;
+      width: 600px;  
+      height: 450px;
+    }
+    @media (max-width:628px) {
+      margin-top: -70px;
+      width: 500px;  
+      height: 400px;
+    }
+    @media (max-width:528px) {
+      width: 458px;  
+      height: 350px;
+    }
   }
 `
 export const ProjectPreviewContainer = styled.div`
@@ -539,6 +564,33 @@ export const ProjectPreviewContainer = styled.div`
     font-size: 45px;
     font-weight: 700;
     color: #FFF;
+    @media (max-width:1820px) {
+      font-size: 38px;
+    }
+    @media (max-width:1555px) {
+      font-size: 35px;
+    }
+    @media (max-width:1442px) {
+      font-size: 30px;
+    }
+    @media (max-width:1255px) {
+      font-size: 24px;
+    }
+    @media (max-width:1065px) {
+      font-size: 22px;
+    }
+    @media (max-width:952px) {
+      font-size: 18px;
+    }
+    @media (max-width:802px) {
+      font-size: 14px;
+    }
+    @media (max-width:726px) {
+      font-size: 13px;
+    }
+    @media (max-width:628px) {
+      font-size: 11px;
+    }
   }
 `;
 
@@ -553,6 +605,7 @@ export const ProjectContainer = styled.div`
   @media (max-width:1275px){
     padding-top: 120px;
   }
+  
   .project_content{
     position: relative;
     display: flex;

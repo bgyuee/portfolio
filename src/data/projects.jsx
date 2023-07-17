@@ -143,7 +143,7 @@ const projects = [
        -&nbsp;Javascript <span>settimeout함수</span>를 이용해서 무한 롤링슬라이드 구현
      </p>,
      <p>
-        -&nbsp;<span>AJAX</span>의 최신 Fetch API 사용해서 html 문서안에서 다른 html문서 불러옴
+        -&nbsp;<span>AJAX</span>의 Fetch API 사용해서 html 문서안에서 다른 html문서 불러옴
      </p>
     ],
     site : 'https://bgyuee.github.io/samsungcnt_project/',
@@ -176,7 +176,7 @@ const projects = [
         <p>-&nbsp;반응형 웹으로 Pc, Tablet, Mobile 환경에서 사용가능</p>
         <p>-&nbsp;<span>CSS animation</span> 속성과 마우스 <span>Hover</span> 인터렉션 구현</p>
         <p>-&nbsp;<span>Javascript의 배열</span>을 이용해서 gif파일을 이용해서 애니메이션 구현</p>
-        <p>-&nbsp;<span>AJAX</span>의 최신 Fetch API 사용해서 html 문서안에서 다른 html문서 불러옴</p> 
+        <p>-&nbsp;<span>AJAX</span>의 Fetch API 사용해서 html 문서안에서 다른 html문서 불러옴</p> 
     </>
     ],
     site : 'https://bgyuee.github.io/CJONE_project/',
@@ -205,7 +205,7 @@ const projects = [
       <>
         <p>-&nbsp;삼성전기 홈페이지를 <span>figma</span>를 이용해서 Layout을 정하고, 퍼블리싱</p>
         <p>-&nbsp;<span>CSS animation</span> 속성과 마우스 <span>Hover</span> 인터렉션 구현</p>
-        <p>-&nbsp;<span>AJAX</span>의 최신 Fetch API 사용해서 html 문서안에서 다른 html문서 불러옴</p> 
+        <p>-&nbsp;<span>AJAX</span>의 Fetch API 사용해서 html 문서안에서 다른 html문서 불러옴</p> 
       </>
     ],
     site : 'https://bgyuee.github.io/samsungsem/',
