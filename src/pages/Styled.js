@@ -529,6 +529,8 @@ export const ProjectsContainer = styled.div`
       height: 400px;
     }
     @media (max-width:528px) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
       width: 458px;  
       height: 350px;
     }
