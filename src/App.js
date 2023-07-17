@@ -1,31 +1,17 @@
 import './App.scss';
 import Home from './pages/Home';
-import Loading from './pages/Loading';
 import Profile from './pages/Profile';
-import Project from './pages/Project';
 import Footer from './pages/Footer';
-import styled from 'styled-components';
 import Header from './components/Header';
 import { useEffect, useRef, useState } from 'react';
 import Background from './components/Background';
-import projects from './data/projects';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Scrollbar, A11y} from 'swiper';
 import { scroller } from 'react-scroll';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
+import Mousemove from './components/Mousemove';
+import MouseWheelup from './components/MouseWheelup';
+import Projects from './pages/Projects';
 
-const mouse = `${process.env.PUBLIC_URL}/images/mouse.png`;
-const wheelDown = `${process.env.PUBLIC_URL}/images/wheelDown.png`;
-const wheelUp = `${process.env.PUBLIC_URL}/images/wheelUp.png`;
 
 function App() {
-
-  const [isLoading, setIsLoading] = useState(false);
-  const projectLength = projects.length;
-  const [validationModal, setValidationModal] = useState(false);
 
   const homeRef = useRef(null);
   const profileRef = useRef(null);
@@ -91,71 +77,37 @@ function App() {
   return (
     <div className="App">
       <Background />
-      {!isLoading ? (
-        <Loading setIsLoading={setIsLoading} />
-      ) : (
-        <>
-          <Header 
-            homeRef={homeRef}
-            profileRef={profileRef}
-            projectsRef={projectsRef}
-            contactRef={contactRef}
-            setAppActiveSection={setActiveSection}
-          />
-          <Home homeRef={homeRef} />
-          <Profile 
-            profileRef={profileRef} 
-            activeSection={activeSection} 
-            profilePage={profilePage}
-            />
-          <Swiper 
-            ref={projectsRef} 
-            id="projects"
-            className={validationModal && 'swiperRemove'}
-            modules={[Navigation, Pagination, Scrollbar, A11y]}
-            navigation
-            pagination={{clickable : true}}
-            loop={true} //무한롤링
-          >
-            <Projects style={{width : `${projectLength*100}%`}}>
-                
-            {projects.map((item, index) => (
-              <SwiperSlide key={index}>
-                <Project
-                  project={item} 
-                  validationModal={validationModal} 
-                  setValidationModal={setValidationModal}
-                  projectPage={projectPage}
-                />
-              </SwiperSlide>
-                  ))}
-             </Projects>
-          </Swiper>
-          <Footer 
-            contactRef={contactRef} 
-            contactPage={contactPage}
-          />
-          {activeSection !== 3 ? (
-            <div className="mosemove">
-            <div className='mouse'  style={{background:`url(${mouse}) no-repeat 50% 50%`}} />
-            <div className='mouseWheelDown' style={{background:`url(${wheelDown}) no-repeat 50% 50%`}} />
-        </div>
-          ):
-          (
-            <div className='mosemove mouseWheelUp'>
-              <div className='mouseWheelUp' style={{background:`url(${wheelUp}) no-repeat 50% 50%`}}
-              onClick={() => setHomeMove(true)}
-              />
-            </div>
-          )}
-      </>
+      <Header 
+        homeRef={homeRef}
+        profileRef={profileRef}
+        projectsRef={projectsRef}
+        contactRef={contactRef}
+        setAppActiveSection={setActiveSection}
+      />
+      <Home homeRef={homeRef} />
+      <Profile 
+        profileRef={profileRef} 
+        activeSection={activeSection} 
+        profilePage={profilePage}
+        />
+      <Projects 
+        id="projects"
+        projectsRef={projectsRef} 
+        projectPage={projectPage}
+        activeSection={activeSection}
+      />
+      <Footer 
+        contactRef={contactRef} 
+        contactPage={contactPage}
+      />
+      {activeSection !== 3 ? (
+        <Mousemove />
+      ):
+      (
+        <MouseWheelup setHomeMove={setHomeMove} />
       )}
     </div>
   );
 }
-
-const Projects = styled.div`
-  display: flex;
-`
 
 export default App;

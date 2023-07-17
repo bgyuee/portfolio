@@ -33,45 +33,14 @@ const samsungsemsub2css = `${process.env.PUBLIC_URL}/images/samsungsemsub2css.jp
 const samsungsemsub2html = `${process.env.PUBLIC_URL}/images/samsungsemsub2html.jpg`;
 const samsungsemsub2LightHouse = `${process.env.PUBLIC_URL}/images/samsungsemsub2LightHouse.jpg`;
 
+// 각 프로젝트 첫페이지
+const samsungcntpage = `${process.env.PUBLIC_URL}/images/samsungcntpage.png`;
+const moviepage = `${process.env.PUBLIC_URL}/images/moviepage.png`;
+const messengerpage = `${process.env.PUBLIC_URL}/images/messengerpage.png`;
+const cjonepage = `${process.env.PUBLIC_URL}/images/cjonepage.png`;
+const samsungsempage = `${process.env.PUBLIC_URL}/images/samsungsempage.png`;
+
 const projects = [
-  {
-    class : "samsungcnt",
-    title : "삼성물산",
-    outline : "",
-    used : [
-      <>
-        <p>#Html</p>
-        <p>#Css</p>
-        <p>#Javascript</p>
-        <p>#반응형</p>
-        <p>#웹표준 준수</p>
-        <p>#웹접근성 준수</p>
-      </>
-    ],
-    period : "2주",
-    explanation : [
-      <p>
-         -&nbsp;삼성물산 홈페이지를 <span>figma</span>를 이용해서 Layout을 정하고, 퍼블리싱
-        반응형 웹으로 Pc, Tablet, Mobile 환경에서 사용가능 
-      </p>,
-       <p>
-        -&nbsp;Css <span>animation</span> 속성과 마우스 <span>Hover</span> 인터렉션 구현
-      </p>,
-      <p>
-       -&nbsp;Javascript <span>settimeout함수</span>를 이용해서 무한 롤링슬라이드 구현
-     </p>,
-     <p>
-        -&nbsp;<span>AJAX</span>의 최신 Fetch API 사용해서 html 문서안에서 다른 html문서 불러옴
-     </p>
-    ],
-    site : 'https://bgyuee.github.io/samsungcnt_project/',
-    github: 'https://github.com/bgyuee/samsungcnt_project',
-    videos : samsungcntVideo,
-    validation : [
-      samsungcntCSS, samsungcntHTML, samsungcntLightHouse, samsungcntsub1css, samsungcntsub1html,
-      samsungcntsub1LightHouse, samsungcntsub2css, samsungcntsub2html, samsungcntsub2LightHouse
-    ]
-  },
   {
     class : "movie",
     title : "NETFLEX",
@@ -109,6 +78,7 @@ const projects = [
     site : 'https://bgyuee.github.io/movie_webapp/',
     github: 'https://github.com/bgyuee/movie_webapp',
     videos : movieVideo,
+    image : moviepage,
     validation : []
   },
   {
@@ -143,7 +113,47 @@ const projects = [
     site : 'https://bgyuee.github.io/Chattingwebapp/',
     github: 'https://github.com/bgyuee/Chattingwebapp',
     videos : messengerVideo,
+    image : messengerpage,
     validation : []
+  },
+  {
+    class : "samsungcnt",
+    title : "삼성물산",
+    outline : "",
+    used : [
+      <>
+        <p>#Html</p>
+        <p>#Css</p>
+        <p>#Javascript</p>
+        <p>#반응형</p>
+        <p>#웹표준 준수</p>
+        <p>#웹접근성 준수</p>
+      </>
+    ],
+    period : "2주",
+    explanation : [
+      <p>
+         -&nbsp;삼성물산 홈페이지를 <span>figma</span>를 이용해서 Layout을 정하고, 퍼블리싱
+        반응형 웹으로 Pc, Tablet, Mobile 환경에서 사용가능 
+      </p>,
+       <p>
+        -&nbsp;Css <span>animation</span> 속성과 마우스 <span>Hover</span> 인터렉션 구현
+      </p>,
+      <p>
+       -&nbsp;Javascript <span>settimeout함수</span>를 이용해서 무한 롤링슬라이드 구현
+     </p>,
+     <p>
+        -&nbsp;<span>AJAX</span>의 Fetch API 사용해서 html 문서안에서 다른 html문서 불러옴
+     </p>
+    ],
+    site : 'https://bgyuee.github.io/samsungcnt_project/',
+    github: 'https://github.com/bgyuee/samsungcnt_project',
+    videos : samsungcntVideo,
+    image : samsungcntpage,
+    validation : [
+      samsungcntCSS, samsungcntHTML, samsungcntLightHouse, samsungcntsub1css, samsungcntsub1html,
+      samsungcntsub1LightHouse, samsungcntsub2css, samsungcntsub2html, samsungcntsub2LightHouse
+    ]
   },
   {
     class : "cjone",
@@ -166,12 +176,13 @@ const projects = [
         <p>-&nbsp;반응형 웹으로 Pc, Tablet, Mobile 환경에서 사용가능</p>
         <p>-&nbsp;<span>CSS animation</span> 속성과 마우스 <span>Hover</span> 인터렉션 구현</p>
         <p>-&nbsp;<span>Javascript의 배열</span>을 이용해서 gif파일을 이용해서 애니메이션 구현</p>
-        <p>-&nbsp;<span>AJAX</span>의 최신 Fetch API 사용해서 html 문서안에서 다른 html문서 불러옴</p> 
+        <p>-&nbsp;<span>AJAX</span>의 Fetch API 사용해서 html 문서안에서 다른 html문서 불러옴</p> 
     </>
     ],
     site : 'https://bgyuee.github.io/CJONE_project/',
     github: 'https://github.com/bgyuee/CJONE_project',
     videos : cjoneVideo,
+    image : cjonepage,
     validation : [
       CJONEcss, CJONEhtml, CJONELightHouse
     ]
@@ -194,12 +205,13 @@ const projects = [
       <>
         <p>-&nbsp;삼성전기 홈페이지를 <span>figma</span>를 이용해서 Layout을 정하고, 퍼블리싱</p>
         <p>-&nbsp;<span>CSS animation</span> 속성과 마우스 <span>Hover</span> 인터렉션 구현</p>
-        <p>-&nbsp;<span>AJAX</span>의 최신 Fetch API 사용해서 html 문서안에서 다른 html문서 불러옴</p> 
+        <p>-&nbsp;<span>AJAX</span>의 Fetch API 사용해서 html 문서안에서 다른 html문서 불러옴</p> 
       </>
     ],
     site : 'https://bgyuee.github.io/samsungsem/',
     github: 'https://github.com/bgyuee/samsungsem',
     videos : samsungsemVideo,
+    image : samsungsempage,
     validation : [
       samsungsemcss, samsungsemhtml, samsungsemLightHouse, samsungsemsub1css, samsungsemsub1html,
       samsungsemsub1LightHouse, samsungsemsub2css, samsungsemsub2html, samsungsemsub2LightHouse
